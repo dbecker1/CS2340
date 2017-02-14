@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/cancelButton"
             android:layout_weight="0.08"
-            android:onClick="onCancelPress"
+            android:onClick="onCancelPressed"
             tools:text="Cancel">
         </Button>
         <Button
