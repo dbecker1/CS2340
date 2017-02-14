@@ -14,7 +14,7 @@
         android:textAlignment="center" />
 
     <TextView
-        android:text="usernameLabel"
+        android:text="Username"
         android:layout_width="133dp"
         android:layout_height="wrap_content"
         android:id="@+id/usernameLabel"
@@ -30,7 +30,7 @@
         android:layout_weight="0.08" />
 
     <TextView
-        android:text="passwordLabel"
+        android:text="Password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/passwordLabel"
@@ -46,22 +46,30 @@
         android:id="@+id/passwordTextField"
         android:layout_weight="0.08" />
 
-    <Button
-        android:text="Submit"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:id="@+id/LinearLayout02"
         android:layout_height="wrap_content"
-        android:id="@+id/submitButton"
-        android:layout_weight="0.08"
-        android:onClick="onSubmitPressed"
-        android:textAlignment="center"
-        android:textColor="@android:color/holo_green_dark" />
-
-    <Button
-        android:text="Cancel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/button2"
-        android:layout_weight="0.08"
-        android:onClick="OnCancelPress" />
-
+        android:layout_width="fill_parent"
+        android:layout_alignParentBottom="true">
+        <Button
+            android:text="Cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cancelButton"
+            android:layout_weight="0.08"
+            android:onClick="onCancelPress"
+            tools:text="Cancel">
+        </Button>
+        <Button
+            android:text="Submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/submitButton"
+            android:layout_weight="0.08"
+            android:onClick="onSubmitPressed"
+            android:textAlignment="center"
+            android:textColor="@android:color/holo_green_dark"
+            tools:text="Submit">
+        </Button>
+    </LinearLayout>
 </LinearLayout>
