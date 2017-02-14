@@ -34,4 +34,9 @@ public class WelcomeActivity extends AppCompatActivity {
         startActivity(register);
 
     }
+
+    @Override
+    public void onBackPressed() {
+        return;
+    }
 }

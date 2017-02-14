@@ -1,9 +1,12 @@
 package edu.gatech.cs2340.cs2340application;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -23,9 +26,26 @@ public class HomeScreenActivity extends AppCompatActivity {
         mDrawerList = (ListView) findViewById(R.id.navList);
     }
 
+    protected void onLogoutPressed(View view) {
+        SharedPreferences settings = getSharedPreferences("Preferences", 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.remove("username");
+
+        editor.commit();
+
+        Intent welcome = new Intent(this, WelcomeActivity.class);
+        startActivity(welcome);
+        finish();
+    }
+
     private void addDrawerItems() {
         String[] osArray = { "Logout"};
         mAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, osArray);
         mDrawerList.setAdapter(mAdapter);
+    }
+
+    @Override
+    public void onBackPressed() {
+        return;
     }
 }

@@ -18,7 +18,8 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:id="@+id/button2" />
+        android:id="@+id/logout"
+        android:onClick="onLogoutPressed" />
 
     <android.support.v4.widget.DrawerLayout
         android:id="@+id/drawer_layout"
