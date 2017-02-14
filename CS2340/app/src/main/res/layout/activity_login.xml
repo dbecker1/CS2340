@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/errorView"
+        android:layout_weight="0.08"
+        android:textColor="@android:color/holo_red_dark"
+        android:textAlignment="center" />
+
+    <TextView
+        android:text="usernameLabel"
+        android:layout_width="133dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/usernameLabel"
+        tools:text="Username"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/usernameTextField"
+        android:layout_weight="0.08" />
+
+    <TextView
+        android:text="passwordLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/passwordLabel"
+        android:layout_weight="0.10"
+        tools:text="Password"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/passwordTextField"
+        android:layout_weight="0.08" />
+
+    <Button
+        android:text="Submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/submitButton"
+        android:layout_weight="0.08"
+        android:onClick="onSubmitPressed"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_green_dark" />
+
+    <Button
+        android:text="Cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button2"
+        android:layout_weight="0.08"
+        android:onClick="OnCancelPress" />
+
+</LinearLayout>
