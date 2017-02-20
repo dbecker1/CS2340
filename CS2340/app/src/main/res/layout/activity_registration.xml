@@ -23,7 +23,8 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/nameTextField" />
+        android:id="@+id/nameTextField"
+        style="@style/Widget.AppCompat.EditText" />
 
     <TextView
         android:text="Password"
@@ -67,10 +68,53 @@
         android:ems="10"
         android:id="@+id/idTextField" />
 
+    <TextView
+        android:text="Type of User"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/userTypeLabel" />
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_above="@+id/view_below" >
+
+        <RadioButton
+            android:text="Regular User"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/userRadioButton"
+            android:checked="true"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:text="Worker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/workerRadioButton"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:text="Manager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/managerRadioButton"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:text="Admin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/adminRadioButton"
+            android:textSize="12sp" />
+    </RadioGroup>
+
     <LinearLayout
         android:id="@+id/LinearLayout0"
         android:layout_height="wrap_content"
-        android:layout_width="fill_parent"
+        android:layout_width="373dp"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal">
         <Button
@@ -80,6 +124,7 @@
             android:id="@+id/cancelButton"
             android:onClick="onCancelPressed">
         </Button>
+
         <Button
             android:text="Register"
             android:layout_width="194dp"

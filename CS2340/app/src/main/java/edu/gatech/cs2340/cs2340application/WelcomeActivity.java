@@ -29,10 +29,8 @@ public class WelcomeActivity extends AppCompatActivity {
     }
 
     protected void onRegisterPressed(View view) {
-
-        Intent register = new Intent(this, LoginActivity.class);
+        Intent register = new Intent(this, RegistrationActivity.class);
         startActivity(register);
-
     }
 
     @Override

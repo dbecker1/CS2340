@@ -9,12 +9,15 @@ import android.widget.TextView;
 import android.widget.EditText;
 import android.view.View;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class LoginActivity extends AppCompatActivity {
 
     private TextView errorView;
     private EditText username;
     private EditText password;
-
+    private HashMap<String, User> userHashMap;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +27,7 @@ public class LoginActivity extends AppCompatActivity {
         password = (EditText) findViewById(R.id.passwordTextField);
         username.setText("");
         password.setText("");
+        userHashMap = new HashMap<String, User>();
     }
 
     protected void onSubmitPressed(View view) {
@@ -43,6 +47,15 @@ public class LoginActivity extends AppCompatActivity {
 
     protected void onCancelPressed(View view) {
         onBackPressed();
+    }
+
+    protected void onRegisterPressed(View view) {
+        Intent registration = new Intent(this, RegistrationActivity.class);
+        startActivity(registration);
+    }
+
+    public HashMap<String, User> getUserHashMap() {
+        return userHashMap;
     }
 
 }
