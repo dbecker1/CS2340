@@ -72,4 +72,28 @@
             tools:text="Submit">
         </Button>
     </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:layout_weight="0.09" />
+
+    <TextView
+        android:text="Don't have an account? Register here!"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/accountLabel"
+        android:layout_weight="0.08"
+        android:textAlignment="center" />
+
+    <Button
+        android:text="Register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/Register"
+        android:textSize="12sp"
+        android:textAlignment="center"
+        android:onClick="onRegisterPressed" />
 </LinearLayout>
