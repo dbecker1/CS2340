@@ -23,7 +23,6 @@ public class HomeScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_welcome);
         setContentView(R.layout.activity_homescreen);
         mDrawerList = (ListView) findViewById(R.id.navList);
     }
@@ -33,6 +32,12 @@ public class HomeScreenActivity extends AppCompatActivity {
         auth.signOut();
 
         Intent welcome = new Intent(this, WelcomeActivity.class);
+        startActivity(welcome);
+        finish();
+    }
+
+    protected void onProfilePressed(View view) {
+        Intent welcome = new Intent(this, ProfileActivity.class);
         startActivity(welcome);
         finish();
     }

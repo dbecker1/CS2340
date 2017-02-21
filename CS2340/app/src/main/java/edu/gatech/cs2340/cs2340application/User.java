@@ -4,37 +4,42 @@ package edu.gatech.cs2340.cs2340application;
  * Created by bzhang345 on 2/20/17.
  */
 
-public abstract class User {
-    protected String username;
-    protected String password;
-    protected String id;
+public class User {
+    protected String emailAddress;
+    protected String userType;
+    protected String address;
 
-    public String getUsername() {
-        return username;
+    public User() {
+
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public User(String emailAddress, String userType, String address) {
+        this.emailAddress = emailAddress;
+        this.userType = userType;
+        this.address = address;
     }
 
-    public String getPassword() {
-        return password;
+    public String getEmailAddress() {
+        return emailAddress;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
     }
 
-    public String getId() {
-        return id;
+    public String getUserType() {
+        return userType;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setUserType(String userType) {
+        this.userType = userType;
     }
 
-    public String toString() {
-        return "User: My username is: " + username + "\nmy password is: " + password
-                + "\nmy ID is: " + id;
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

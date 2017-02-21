@@ -41,7 +41,7 @@ public class RegistrationActivity extends AppCompatActivity {
     private EditText password;
     private EditText confirmPassword;
     private EditText id;
-    private RadioGroup userType;
+    //private RadioGroup userType;
     private TextView errorText;
     //Firebase
     private FirebaseAuth mAuth;
@@ -56,13 +56,13 @@ public class RegistrationActivity extends AppCompatActivity {
         password = (EditText) findViewById(R.id.passwordTextField);
         confirmPassword = (EditText) findViewById(R.id.retypePasswordTextField);
         id = (EditText) findViewById(R.id.idTextField);
-        userType = (RadioGroup) findViewById(R.id.radio_group);
+        //userType = (RadioGroup) findViewById(R.id.radio_group);
         errorText = (TextView) findViewById(R.id.errorText);
         name.setText("");
         password.setText("");
         confirmPassword.setText("");
         id.setText("");
-        userType.check(R.id.userRadioButton);
+        //userType.check(R.id.userRadioButton);
         errorText.setText("");
         mAuth = FirebaseAuth.getInstance();
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -88,9 +88,9 @@ public class RegistrationActivity extends AppCompatActivity {
                             // the auth state listener will be notified and logic to handle the
                             // signed in user can be handled in the listener.
                             if (!task.isSuccessful()) {
-                                errorText.setText("ERROR: Incorrect username-password combination");
+                                errorText.setText("Error: Unable to creat user.");
                             } else {
-                                Intent next = new Intent(RegistrationActivity.this, HomeScreenActivity.class);
+                                Intent next = new Intent(RegistrationActivity.this, ProfileActivity.class);
                                 startActivity(next);
                                 finish();
                             }
@@ -100,7 +100,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     });
         } else if (typeOfError == 1) {
             new AlertDialog.Builder(this)
-                    .setTitle("ERROR: INVALID USERNAME")
+                    .setTitle("Error: Invalid Username")
                     .setMessage("Please enter a valid username")
                     .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
@@ -111,7 +111,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     .show();
         } else if (typeOfError == 2) {
             new AlertDialog.Builder(this)
-                    .setTitle("ERROR: Passwords do not match")
+                    .setTitle("Error: Passwords do not match")
                     .setMessage("Please enter passwords again")
                     .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
@@ -122,7 +122,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     .show();
         } else if (typeOfError == 3) {
             new AlertDialog.Builder(this)
-                    .setTitle("ERROR: INVALID PASSWORD")
+                    .setTitle("Error: Invalid Password")
                     .setMessage("Please enter a password")
                     .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
@@ -133,7 +133,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     .show();
         } else if (typeOfError == 4) {
             new AlertDialog.Builder(this)
-                    .setTitle("ERROR: INVALID ID")
+                    .setTitle("Error: Invalid ID")
                     .setMessage("Please enter a valid ID")
                     .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {

@@ -4,7 +4,7 @@ package edu.gatech.cs2340.cs2340application;
  * Created by bzhang345 on 2/20/17.
  */
 
-public class RegisteredUser extends User {
+/*public class RegisteredUser extends User {
 
     public RegisteredUser(String username, String password, String id) {
         super();
@@ -18,6 +18,6 @@ public class RegisteredUser extends User {
         return "Registered User: My username is: " + username + "\nmy password is: " + password
                 + "\nmy ID is: " + id;
     }
-}
+}*/
 
 

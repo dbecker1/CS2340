@@ -4,6 +4,7 @@ package edu.gatech.cs2340.cs2340application;
  * Created by bzhang345 on 2/20/17.
  */
 
+/*
 public class Admin extends User {
     public Admin(String username, String password, String id) {
         super();
@@ -18,3 +19,4 @@ public class Admin extends User {
                 + "\nmy ID is: " + id;
     }
 }
+*/

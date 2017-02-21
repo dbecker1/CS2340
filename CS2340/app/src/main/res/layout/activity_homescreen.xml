@@ -12,6 +12,13 @@
     android:background="#ffffffff">
 
     <Button
+        android:text="Edit Profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/profile"
+        android:onClick="onProfilePressed" />
+
+    <Button
         android:text="Logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
