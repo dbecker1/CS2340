@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class HomeScreenActivity extends AppCompatActivity {
 
     private ListView mDrawerList;
@@ -27,11 +29,8 @@ public class HomeScreenActivity extends AppCompatActivity {
     }
 
     protected void onLogoutPressed(View view) {
-        SharedPreferences settings = getSharedPreferences("Preferences", 0);
-        SharedPreferences.Editor editor = settings.edit();
-        editor.remove("username");
-
-        editor.commit();
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        auth.signOut();
 
         Intent welcome = new Intent(this, WelcomeActivity.class);
         startActivity(welcome);

@@ -2,22 +2,30 @@ package edu.gatech.cs2340.cs2340application;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.widget.TextView;
 import android.widget.EditText;
 import android.view.View;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
 
+    private FirebaseAuth mAuth;
     private TextView errorView;
     private EditText username;
     private EditText password;
-    private HashMap<String, User> userHashMap;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,21 +35,29 @@ public class LoginActivity extends AppCompatActivity {
         password = (EditText) findViewById(R.id.passwordTextField);
         username.setText("");
         password.setText("");
-        userHashMap = new HashMap<String, User>();
+        mAuth = FirebaseAuth.getInstance();
     }
 
     protected void onSubmitPressed(View view) {
-        if (username.getText().toString().equals("user") && password.getText().toString().equals("pass")){
-            SharedPreferences settings = getSharedPreferences("Preferences", 0);
-            SharedPreferences.Editor editor = settings.edit();
-            editor.putString("username", username.getText().toString());
+        if (!username.getText().toString().equals("") && !password.getText().toString().equals("")){
+            String email = username.getText().toString();
+            String pwd = password.getText().toString();
+            mAuth.signInWithEmailAndPassword(email, pwd)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
 
-            editor.commit();
-            Intent next = new Intent(this, HomeScreenActivity.class);
-            startActivity(next);
-            finish();
+                            if (!task.isSuccessful()) {
+                                errorView.setText("Error: Invalid username or password");
+                            } else {
+                                Intent next = new Intent(LoginActivity.this, HomeScreenActivity.class);
+                                startActivity(next);
+                                finish();
+                            }
+                        }
+                    });
         } else {
-            errorView.setText("Error: Incorrect Username or Password");
+            errorView.setText("Error: Please enter a username and password");
         }
     }
 
@@ -52,10 +68,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onRegisterPressed(View view) {
         Intent registration = new Intent(this, RegistrationActivity.class);
         startActivity(registration);
-    }
-
-    public HashMap<String, User> getUserHashMap() {
-        return userHashMap;
     }
 
 }
