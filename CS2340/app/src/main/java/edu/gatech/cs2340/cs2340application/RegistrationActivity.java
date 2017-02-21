@@ -22,15 +22,32 @@ import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.content.DialogInterface;
 import android.content.Context;
-import java.util.HashMap;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import android.widget.Toast;
+import android.support.annotation.NonNull;
+import android.text.TextUtils;
+import android.util.Log;
 
 public class RegistrationActivity extends AppCompatActivity {
+
+    private static final String TAG = "EmailPassword";
 
     private EditText name;
     private EditText password;
     private EditText confirmPassword;
     private EditText id;
     private RadioGroup userType;
+    private TextView errorText;
+    //Firebase
+    private FirebaseAuth mAuth;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,11 +57,14 @@ public class RegistrationActivity extends AppCompatActivity {
         confirmPassword = (EditText) findViewById(R.id.retypePasswordTextField);
         id = (EditText) findViewById(R.id.idTextField);
         userType = (RadioGroup) findViewById(R.id.radio_group);
+        errorText = (TextView) findViewById(R.id.errorText);
         name.setText("");
         password.setText("");
         confirmPassword.setText("");
         id.setText("");
         userType.check(R.id.userRadioButton);
+        errorText.setText("");
+        mAuth = FirebaseAuth.getInstance();
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
 
@@ -58,7 +78,26 @@ public class RegistrationActivity extends AppCompatActivity {
     protected void onRegisterPressed(View view) {
         int typeOfError = checkValidInputs();
         if (typeOfError == 0) {
+            mAuth.createUserWithEmailAndPassword(name.getText().toString(), password.getText().toString())
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
 
+                            // If sign in fails, display a message to the user. If sign in succeeds
+                            // the auth state listener will be notified and logic to handle the
+                            // signed in user can be handled in the listener.
+                            if (!task.isSuccessful()) {
+                                errorText.setText("ERROR: Incorrect username-password combination");
+                            } else {
+                                Intent next = new Intent(RegistrationActivity.this, HomeScreenActivity.class);
+                                startActivity(next);
+                                finish();
+                            }
+
+                            // ...
+                        }
+                    });
         } else if (typeOfError == 1) {
             new AlertDialog.Builder(this)
                     .setTitle("ERROR: INVALID USERNAME")
@@ -103,8 +142,6 @@ public class RegistrationActivity extends AppCompatActivity {
                     })
                     .setIcon(android.R.drawable.ic_dialog_alert)
                     .show();
-        } else {
-            HashMap<String, User> userHashMap;
         }
     }
 

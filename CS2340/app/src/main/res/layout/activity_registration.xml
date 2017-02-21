@@ -154,4 +154,13 @@
                 android:textSize="18sp" android:layout_marginTop="15dp">
         </Button>
     </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/errorText"
+        android:layout_weight="0.16"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textColor="@android:color/holo_red_dark" />
 </LinearLayout>
