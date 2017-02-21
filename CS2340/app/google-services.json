@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "524782268330",
+    "firebase_url": "https://cs2340-cb649.firebaseio.com",
+    "project_id": "cs2340-cb649",
+    "storage_bucket": "cs2340-cb649.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524782268330:android:08bf138f295dce53",
+        "android_client_info": {
+          "package_name": "edu.gatech.cs2340.cs2340application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "524782268330-19v983uefksf23q557hkqd2s051n0ggb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgbu_KLRKH33-e-NkCu0t7jHD3PkQRTfs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
