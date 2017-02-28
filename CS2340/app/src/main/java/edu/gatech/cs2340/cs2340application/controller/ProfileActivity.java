@@ -47,7 +47,7 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey) {
                 HashMap<String, String> userMap =  (HashMap<String, String>)dataSnapshot.getValue();
-                existingProfile = new User(userMap.get("emailAddress"), userMap.get("userType"), userMap.get("address"));
+                existingProfile = dataSnapshot.getValue(User.class);
                 email.setText(existingProfile.getEmailAddress());
                 address.setText(existingProfile.getEmailAddress());
                 int radioButton = -1;

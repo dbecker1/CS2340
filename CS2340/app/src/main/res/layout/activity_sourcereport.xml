@@ -230,7 +230,8 @@
             android:layout_alignRight="@+id/typeOfWater"
             android:layout_alignEnd="@+id/typeOfWater"
             android:layout_weight="0.48"
-            android:textColor="@color/colorPrimary">
+            android:textColor="@color/colorPrimary"
+            android:onClick="onCancelPressed">
         </Button>
 
         <Button

@@ -35,7 +35,7 @@ public class PurityReportActivity extends AppCompatActivity {
         location = (EditText) findViewById(R.id.latitudeLongitude);
         contaminant = (EditText) findViewById(R.id.contaminant);
         virus = (EditText) findViewById(R.id.virus);
-        //condition = (RadioGroup) findViewById(R.id.condition);
+        condition = (RadioGroup) findViewById(R.id.condition);
     }
 
     protected void onSavePressed(View view) {
@@ -47,7 +47,7 @@ public class PurityReportActivity extends AppCompatActivity {
 
         PurityReport report = new PurityReport();
         report.setDateTime(new Date());
-        report.setUserId(auth.getCurrentUser().getUid());
+        report.setUserId(auth.getCurrentUser().getEmail());
         report.setReportNumber(UUID.randomUUID().toString());
         report.setCondition(conditionString);
         report.setLocation(location.getText().toString());
@@ -64,6 +64,12 @@ public class PurityReportActivity extends AppCompatActivity {
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();
 
+        Intent next = new Intent(PurityReportActivity.this, HomeScreenActivity.class);
+        startActivity(next);
+        finish();
+    }
+
+    protected void onCancelPressed(View view){
         Intent next = new Intent(PurityReportActivity.this, HomeScreenActivity.class);
         startActivity(next);
         finish();

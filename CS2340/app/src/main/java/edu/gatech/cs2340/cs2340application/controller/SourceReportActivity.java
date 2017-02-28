@@ -42,14 +42,14 @@ public class SourceReportActivity extends AppCompatActivity {
         String waterTypeString = typeButton.getText().toString();
 
         int conditionID = waterCondition.getCheckedRadioButtonId();
-        RadioButton conditionButton = (RadioButton) waterType.findViewById(conditionID);
+        RadioButton conditionButton = (RadioButton) waterCondition.findViewById(conditionID);
         String conditionString = conditionButton.getText().toString();
 
         FirebaseAuth auth = FirebaseAuth.getInstance();
 
         SourceReport report = new SourceReport();
         report.setDateTime(new Date());
-        report.setUserId(auth.getCurrentUser().getUid());
+        report.setUserId(auth.getCurrentUser().getEmail());
         report.setReportNumber(UUID.randomUUID().toString());
         report.setCondition(conditionString);
         report.setType(waterTypeString);
@@ -70,4 +70,9 @@ public class SourceReportActivity extends AppCompatActivity {
         finish();
     }
 
+    protected void onCancelPressed(View view){
+        Intent next = new Intent(SourceReportActivity.this, HomeScreenActivity.class);
+        startActivity(next);
+        finish();
+    }
 }
