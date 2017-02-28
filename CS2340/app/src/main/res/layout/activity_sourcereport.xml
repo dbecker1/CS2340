@@ -54,73 +54,96 @@
         android:layout_alignParentStart="true"
         android:id="@+id/typeOfWater" />
 
-    <RadioButton
-        android:text="Bottled"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/typeOfWater"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="31dp"
-        android:id="@+id/bottledWaterType" />
 
-    <RadioButton
-        android:text="Lake"
+
+
+
+
+    <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/bottledWaterType"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="11dp"
-        android:id="@+id/lakeWaterType" />
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:text="Other:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/lakeWaterType"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:id="@+id/textView14" />
+        android:id="@+id/Other" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:layout_below="@+id/lakeWaterType"
-        android:layout_toRightOf="@+id/textView14"
+        android:layout_toRightOf="@+id/Other"
         android:id="@+id/otherWaterType"
-        android:layout_alignBottom="@+id/textView14" />
+        android:layout_alignBottom="@+id/Other" />
 
-    <RadioButton
-        android:text="Well"
-        android:layout_width="wrap_content"
+    <RadioGroup
+        android:id="@+id/waterType"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/wellWaterType"
-        android:layout_alignBaseline="@+id/bottledWaterType"
-        android:layout_alignBottom="@+id/bottledWaterType"
-        android:layout_toRightOf="@+id/typeOfWater"
-        android:layout_toEndOf="@+id/typeOfWater" />
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_below="@+id/typeOfWater"
 
-    <RadioButton
-        android:text="Spring"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/springWaterType"
-        android:layout_above="@+id/otherWaterType"
-        android:layout_alignLeft="@+id/wellWaterType"
-        android:layout_alignStart="@+id/wellWaterType" />
+        android:layout_marginTop="29dp">
+        `
 
-    <RadioButton
-        android:text="Stream"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/steamWaterType"
-        android:layout_alignBaseline="@+id/wellWaterType"
-        android:layout_alignBottom="@+id/wellWaterType"
-        android:layout_toRightOf="@+id/springWaterType"
-        android:layout_toEndOf="@+id/springWaterType" />
+        <RadioButton
+            android:text="Bottled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.53"
+            android:layout_alignBaseline="@+id/typeOfWater"
+            android:layout_alignBottom="@+id/typeOfWater"
+            android:layout_alignRight="@+id/conditionOfWaterLabel"
+            android:layout_alignEnd="@+id/conditionOfWaterLabel"
+            android:textSize="10sp" />
+
+        <RadioButton
+            android:text="Lake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/typeOfWater"
+            android:layout_toRightOf="@+id/treatableClearCondition"
+            android:layout_toEndOf="@+id/treatableClearCondition"
+            android:textSize="10sp" />
+
+        <RadioButton
+            android:text="Well"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/bottledWaterType"
+            android:layout_alignBottom="@+id/bottledWaterType"
+            android:layout_toRightOf="@+id/typeOfWater"
+            android:layout_toEndOf="@+id/typeOfWater"
+            android:textSize="10sp" />
+
+        <RadioButton
+            android:text="Spring"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/otherWaterType"
+            android:layout_alignLeft="@+id/wellWaterType"
+            android:layout_alignStart="@+id/wellWaterType"
+            android:textSize="10sp" />
+
+        <RadioButton
+            android:text="Stream"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/wellWaterType"
+            android:layout_alignBottom="@+id/wellWaterType"
+            android:layout_toRightOf="@+id/springWaterType"
+            android:layout_toEndOf="@+id/springWaterType"
+            android:textSize="10sp" />
+
+
+</RadioGroup>
 
     <TextView
         android:text="Condition of Water"
@@ -128,35 +151,68 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="26dp"
         android:id="@+id/conditionOfWaterLabel"
-        android:layout_below="@+id/textView14"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <RadioButton
-        android:text="Waste"
-        android:layout_width="wrap_content"
+    <RadioGroup
+        android:id="@+id/waterCondition"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/conditionOfWaterLabel"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/wasteCondition" />
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_below="@+id/typeOfWater"
+        android:layout_marginTop="29dp">
+        `
 
-    <RadioButton
-        android:text="Treatable-Clear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/conditionOfWaterLabel"
-        android:layout_toRightOf="@+id/bottledWaterType"
-        android:layout_toEndOf="@+id/bottledWaterType"
-        android:id="@+id/treatableClearCondition" />
+        <RadioButton
+            android:text="Waste"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/conditionOfWaterLabel"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/wasteCondition"
+            android:textSize="10sp" />
 
-    <RadioButton
-        android:text="RadioButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/treatableClearCondition"
-        android:layout_toRightOf="@+id/treatableClearCondition"
-        android:layout_toEndOf="@+id/treatableClearCondition"
-        android:id="@+id/radioButton8" />
+        <RadioButton
+            android:text="Treatable-Clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:layout_alignBaseline="@+id/wasteCondition"
+            android:layout_alignBottom="@+id/wasteCondition" />
+
+        <RadioButton
+            android:text="Treatable-Clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/treatableClearCondition"
+            android:textSize="10sp"
+            android:layout_alignBaseline="@+id/wasteCondition"
+            android:layout_alignBottom="@+id/wasteCondition" />
+
+        <RadioButton
+            android:text="Treatable-Muddy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/treatableMuddyCondition"
+            android:textSize="10sp"
+            android:layout_alignBaseline="@+id/treatableClearCondition"
+            android:layout_alignBottom="@+id/treatableClearCondition"
+            android:layout_toRightOf="@+id/treatableClearCondition"
+            android:layout_toEndOf="@+id/treatableClearCondition" />
+
+        <RadioButton
+            android:text="Potable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/treatableMuddyCondition"
+            android:layout_toRightOf="@+id/treatableMuddyCondition"
+            android:layout_toEndOf="@+id/treatableMuddyCondition"
+            android:id="@+id/potableCondition"
+            android:textSize="10sp" />
+
+
+    </RadioGroup>
 
 </RelativeLayout>
