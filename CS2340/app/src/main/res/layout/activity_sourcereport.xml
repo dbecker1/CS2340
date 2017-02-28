@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_report"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="edu.gatech.cs2340.cs2340application.ReportActivity">
+
+    <TextView
+        android:text="Location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:id="@+id/locationLabel"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        tools:text="Location" />
+
+    <TextView
+        android:text="(Latitude, Longitude)"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:id="@+id/latitudeLabel"
+        tools:text="(Latitude, Longitude)"
+        android:layout_below="@+id/locationLabel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="18sp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:layout_below="@+id/latitudeLabel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/latitudeLongitude"
+        android:text="0,0" />
+
+    <TextView
+        android:text="Type of Water"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/latitudeLongitude"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/typeOfWater" />
+
+    <RadioButton
+        android:text="Bottled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/typeOfWater"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="31dp"
+        android:id="@+id/bottledWaterType" />
+
+    <RadioButton
+        android:text="Lake"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bottledWaterType"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="11dp"
+        android:id="@+id/lakeWaterType" />
+
+    <TextView
+        android:text="Other:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lakeWaterType"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textView14" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_below="@+id/lakeWaterType"
+        android:layout_toRightOf="@+id/textView14"
+        android:id="@+id/otherWaterType"
+        android:layout_alignBottom="@+id/textView14" />
+
+    <RadioButton
+        android:text="Well"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/wellWaterType"
+        android:layout_alignBaseline="@+id/bottledWaterType"
+        android:layout_alignBottom="@+id/bottledWaterType"
+        android:layout_toRightOf="@+id/typeOfWater"
+        android:layout_toEndOf="@+id/typeOfWater" />
+
+    <RadioButton
+        android:text="Spring"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/springWaterType"
+        android:layout_above="@+id/otherWaterType"
+        android:layout_alignLeft="@+id/wellWaterType"
+        android:layout_alignStart="@+id/wellWaterType" />
+
+    <RadioButton
+        android:text="Stream"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/steamWaterType"
+        android:layout_alignBaseline="@+id/wellWaterType"
+        android:layout_alignBottom="@+id/wellWaterType"
+        android:layout_toRightOf="@+id/springWaterType"
+        android:layout_toEndOf="@+id/springWaterType" />
+
+    <TextView
+        android:text="Condition of Water"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:id="@+id/conditionOfWaterLabel"
+        android:layout_below="@+id/textView14"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <RadioButton
+        android:text="Waste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/conditionOfWaterLabel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/wasteCondition" />
+
+    <RadioButton
+        android:text="Treatable-Clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/conditionOfWaterLabel"
+        android:layout_toRightOf="@+id/bottledWaterType"
+        android:layout_toEndOf="@+id/bottledWaterType"
+        android:id="@+id/treatableClearCondition" />
+
+    <RadioButton
+        android:text="RadioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/treatableClearCondition"
+        android:layout_toRightOf="@+id/treatableClearCondition"
+        android:layout_toEndOf="@+id/treatableClearCondition"
+        android:id="@+id/radioButton8" />
+
+</RelativeLayout>
