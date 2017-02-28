@@ -1,18 +1,12 @@
-package edu.gatech.cs2340.cs2340application;
+package edu.gatech.cs2340.cs2340application.controller;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
@@ -22,6 +16,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
+
+import edu.gatech.cs2340.cs2340application.R;
+import edu.gatech.cs2340.cs2340application.model.User;
 
 
 public class ProfileActivity extends AppCompatActivity {
@@ -51,10 +48,10 @@ public class ProfileActivity extends AppCompatActivity {
             public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey) {
                 HashMap<String, String> userMap =  (HashMap<String, String>)dataSnapshot.getValue();
                 existingProfile = new User(userMap.get("emailAddress"), userMap.get("userType"), userMap.get("address"));
-                email.setText(existingProfile.emailAddress);
-                address.setText(existingProfile.address);
+                email.setText(existingProfile.getEmailAddress());
+                address.setText(existingProfile.getEmailAddress());
                 int radioButton = -1;
-                switch(existingProfile.userType) {
+                switch(existingProfile.getUserType()) {
                     case "User":
                         radioButton = R.id.userRadioButton;
                         break;

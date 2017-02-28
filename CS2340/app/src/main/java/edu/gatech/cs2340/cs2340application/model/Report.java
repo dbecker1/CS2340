@@ -1,4 +1,4 @@
-package edu.gatech.cs2340.cs2340application;
+package edu.gatech.cs2340.cs2340application.model;
 
 import java.util.Date;
 
@@ -6,14 +6,12 @@ import java.util.Date;
  * Created by dbeckerfl on 2/27/17.
  */
 
-public class PurityReport {
+public class Report {
     private Date dateTime;
     private String reportNumber;
     private String userId;
     private String location;
-    private String condition;
-    private Double virusPPM;
-    private Double containmentPPM;
+
 
     public String getReportNumber() {
         return reportNumber;
@@ -47,27 +45,4 @@ public class PurityReport {
         this.location = location;
     }
 
-    public String getCondition() {
-        return condition;
-    }
-
-    public void setCondition(String condition) {
-        this.condition = condition;
-    }
-
-    public Double getVirusPPM() {
-        return virusPPM;
-    }
-
-    public void setVirusPPM(Double virusPPM) {
-        this.virusPPM = virusPPM;
-    }
-
-    public Double getContainmentPPM() {
-        return containmentPPM;
-    }
-
-    public void setContainmentPPM(Double containmentPPM) {
-        this.containmentPPM = containmentPPM;
-    }
 }

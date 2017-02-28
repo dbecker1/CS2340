@@ -1,4 +1,4 @@
-package edu.gatech.cs2340.cs2340application;
+package edu.gatech.cs2340.cs2340application.controller;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.view.View;
 
 import com.google.firebase.auth.FirebaseAuth;
+
+import edu.gatech.cs2340.cs2340application.R;
 
 
 public class WelcomeActivity extends AppCompatActivity {

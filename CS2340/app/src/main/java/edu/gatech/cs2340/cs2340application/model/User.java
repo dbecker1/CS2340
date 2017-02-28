@@ -1,4 +1,4 @@
-package edu.gatech.cs2340.cs2340application;
+package edu.gatech.cs2340.cs2340application.model;
 
 /**
  * Created by bzhang345 on 2/20/17.
