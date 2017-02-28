@@ -1,37 +1,24 @@
-package edu.gatech.cs2340.cs2340application;
+package edu.gatech.cs2340.cs2340application.controller;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.RadioButton;
 import android.widget.TextView;
-import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
-import android.widget.TextView;
 import android.widget.EditText;
-import android.view.View;
-import android.widget.RadioGroup;
 import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
 import android.content.DialogInterface;
-import android.content.Context;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import android.widget.Toast;
+
 import android.support.annotation.NonNull;
-import android.text.TextUtils;
 import android.util.Log;
+
+import edu.gatech.cs2340.cs2340application.R;
 
 public class RegistrationActivity extends AppCompatActivity {
 

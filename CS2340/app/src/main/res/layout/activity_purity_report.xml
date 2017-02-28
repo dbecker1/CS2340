@@ -9,6 +9,131 @@
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
         android:paddingBottom="@dimen/activity_vertical_margin"
-        tools:context="edu.gatech.cs2340.cs2340application.PurityReportActivity">
+        tools:context="edu.gatech.cs2340.cs2340application.controller.PurityReportActivity">
+
+    <TextView
+            android:text="Location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:id="@+id/locationLabel"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            tools:text="Location" android:textColor="@color/colorPrimary"/>
+
+    <TextView
+            android:text="(Latitude, Longitude)"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:id="@+id/latitudeLabel"
+            tools:text="(Latitude, Longitude)"
+            android:layout_below="@+id/locationLabel"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="18sp" />
+
+    <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/typeOfWater"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+
+    <TextView
+            android:text="Overall Condition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/typeOfWater"
+            android:layout_below="@+id/latitudeLongitude"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="17dp"
+            android:textColor="@color/colorPrimary"/>
+
+    <RadioButton
+            android:text="Safe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bottledWaterType"
+            android:layout_below="@+id/typeOfWater"
+            android:layout_alignRight="@+id/textView14"
+            android:layout_alignEnd="@+id/textView14"
+            android:layout_marginTop="17dp"/>
+
+    <RadioButton
+            android:text="Unsafe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton8"
+            android:layout_marginLeft="27dp" android:layout_marginStart="27dp"
+            android:layout_alignBaseline="@+id/lakeWaterType"
+            android:layout_alignBottom="@+id/lakeWaterType"
+            android:layout_toRightOf="@+id/lakeWaterType"
+            android:layout_toEndOf="@+id/lakeWaterType"/>
+    <TextView
+            android:text="Virus PPM:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView14"
+            android:layout_marginTop="42dp"
+            android:layout_below="@+id/bottledWaterType"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textColor="@color/colorPrimary"/>
+    <RadioButton
+            android:text="Treatable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lakeWaterType"
+            android:layout_alignBaseline="@+id/bottledWaterType"
+            android:layout_alignBottom="@+id/bottledWaterType"
+            android:layout_toRightOf="@+id/typeOfWater"
+            android:layout_toEndOf="@+id/typeOfWater"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/latitudeLongitude"
+            android:text="0,0" android:layout_below="@+id/latitudeLabel"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/virus"
+            android:layout_marginTop="12dp"
+            android:layout_below="@+id/textView14"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+    <TextView
+            android:text="Contaminant PPM:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/contaminantLabel"
+            android:layout_marginTop="33dp"
+            android:textColor="@color/colorPrimary"
+            android:layout_below="@+id/virus"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/contaminant"
+            android:layout_below="@+id/contaminantLabel"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="14dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
+
 
 </RelativeLayout>

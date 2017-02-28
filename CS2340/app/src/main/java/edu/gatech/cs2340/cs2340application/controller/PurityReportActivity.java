@@ -1,4 +1,4 @@
-package edu.gatech.cs2340.cs2340application;
+package edu.gatech.cs2340.cs2340application.controller;
 
 import android.content.Context;
 import android.content.Intent;
@@ -17,54 +17,55 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.Date;
 import java.util.UUID;
 
-public class SourceReportActivity extends AppCompatActivity {
+import edu.gatech.cs2340.cs2340application.R;
+import edu.gatech.cs2340.cs2340application.model.PurityReport;
+
+public class PurityReportActivity extends AppCompatActivity {
 
     private EditText location;
-    private RadioGroup waterType;
-    private RadioGroup waterCondition;
+    private EditText contaminant;
+    private EditText virus;
+    private RadioGroup condition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sourcereport);
+        setContentView(R.layout.activity_purity_report);
 
         location = (EditText) findViewById(R.id.latitudeLongitude);
-        waterType = (RadioGroup) findViewById(R.id.waterType);
-        waterCondition = (RadioGroup) findViewById(R.id.waterCondition);
+        contaminant = (EditText) findViewById(R.id.contaminant);
+        virus = (EditText) findViewById(R.id.virus);
+        condition = (RadioGroup) findViewById(R.id.condition);
     }
 
     protected void onSavePressed(View view) {
-        int typeId = waterType.getCheckedRadioButtonId();
-        RadioButton typeButton = (RadioButton) waterType.findViewById(typeId);
-        String waterTypeString = typeButton.getText().toString();
-
-        int conditionID = waterCondition.getCheckedRadioButtonId();
-        RadioButton conditionButton = (RadioButton) waterType.findViewById(conditionID);
+        int conditionID = condition.getCheckedRadioButtonId();
+        RadioButton conditionButton = (RadioButton) condition.findViewById(conditionID);
         String conditionString = conditionButton.getText().toString();
 
         FirebaseAuth auth = FirebaseAuth.getInstance();
 
-        SourceReport report = new SourceReport();
+        PurityReport report = new PurityReport();
         report.setDateTime(new Date());
         report.setUserId(auth.getCurrentUser().getUid());
         report.setReportNumber(UUID.randomUUID().toString());
         report.setCondition(conditionString);
-        report.setType(waterTypeString);
         report.setLocation(location.getText().toString());
+        report.setContainmentPPM(Double.parseDouble(contaminant.getText().toString()));
+        report.setVirusPPM(Double.parseDouble(virus.getText().toString()));
 
         DatabaseReference database = FirebaseDatabase.getInstance().getReference();
-        database.child("sourceReports").child(report.getReportNumber()).setValue(report);
+        database.child("purityReports").child(report.getReportNumber()).setValue(report);
 
         Context context = getApplicationContext();
-        CharSequence text = "Water Source Report Saved.";
+        CharSequence text = "Water Purity Report Saved.";
         int duration = Toast.LENGTH_SHORT;
 
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();
 
-        Intent next = new Intent(SourceReportActivity.this, HomeScreenActivity.class);
+        Intent next = new Intent(PurityReportActivity.this, HomeScreenActivity.class);
         startActivity(next);
         finish();
     }
-
 }
