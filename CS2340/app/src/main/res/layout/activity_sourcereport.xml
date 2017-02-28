@@ -62,28 +62,8 @@
         android:ems="10"
         android:layout_toRightOf="@+id/Other"
         android:id="@+id/otherWaterType"
-        android:layout_alignBottom="@+id/Other" />
-
-    <TextView
-        android:text="Other:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/Other"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="11dp"
-        android:layout_marginStart="11dp"
-        android:layout_weight="1" />
-
-    <TextView
-        android:text="Condition of Water"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/conditionOfWaterLabel"
-        android:layout_below="@+id/waterType"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="18dp" />
+        android:layout_alignBottom="@+id/Other"
+        android:layout_below="@+id/waterType" />
 
     <RadioGroup
         android:id="@+id/waterType"
@@ -146,7 +126,28 @@
             android:textSize="10sp" />
 
 
-</RadioGroup>
+    </RadioGroup>
+
+    <TextView
+        android:text="Other:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Other"
+        android:layout_weight="0.53"
+        android:textColor="@color/colorPrimary"
+        android:layout_below="@+id/waterType"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Condition of Water"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/conditionOfWaterLabel"
+        android:layout_below="@+id/otherWaterType"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="17dp" />
 
     <RadioGroup
         android:id="@+id/waterCondition"
@@ -211,23 +212,41 @@
 
     </RadioGroup>
 
-    <Button
-        android:text="Button"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/LinearLayout02"
         android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:weightSum="1"
+        android:paddingLeft="10dp" android:paddingRight="10dp"
         android:layout_below="@+id/waterCondition"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="38dp"
-        android:id="@+id/button2" />
+        android:layout_marginTop="40dp">
 
-    <Button
-        android:text="Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/button2"
-        android:layout_toRightOf="@+id/conditionOfWaterLabel"
-        android:layout_toEndOf="@+id/conditionOfWaterLabel"
-        android:id="@+id/button3" />
+        <Button
+            android:text="Cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cancelButton"
+            android:layout_above="@+id/LinearLayout02"
+            android:layout_alignRight="@+id/typeOfWater"
+            android:layout_alignEnd="@+id/typeOfWater"
+            android:layout_weight="0.48">
+        </Button>
+
+        <Button
+            android:text="Submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/submitButton"
+            android:layout_above="@+id/LinearLayout02"
+            android:layout_toRightOf="@+id/otherWaterType"
+            android:layout_toEndOf="@+id/otherWaterType"
+            android:layout_marginBottom="13dp"
+            android:layout_weight="0.51"
+            android:textAlignment="center">
+        </Button>
+
+    </LinearLayout>
 
 </RelativeLayout>
