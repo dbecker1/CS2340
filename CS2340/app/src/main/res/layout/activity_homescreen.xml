@@ -28,18 +28,28 @@
         android:id="@+id/logout"
         android:onClick="onLogoutPressed" />
 
-    <android.support.v4.widget.DrawerLayout
-        android:id="@+id/drawer_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
+    <Button
+        android:text="Submit Source Report"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/source"
+        android:layout_below="@+id/profile"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
-        <ListView
-            android:id="@+id/navList"
-            android:layout_width="200dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="left|start"
-            android:background="#ffeeeeee"/>
-    </android.support.v4.widget.DrawerLayout>
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="19dp"
+        android:onClick="sourceReport" />
+
+    <Button
+        android:text="Submit Purity Report"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/purity"
+        android:layout_marginTop="14dp"
+        android:layout_below="@+id/source"
+        android:layout_alignLeft="@+id/source"
+        android:layout_alignStart="@+id/source"
+        android:onClick="purityReport"
+        android:visibility="visible" />
 </RelativeLayout>

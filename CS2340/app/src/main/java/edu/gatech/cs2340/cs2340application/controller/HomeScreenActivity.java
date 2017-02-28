@@ -7,16 +7,15 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
 import edu.gatech.cs2340.cs2340application.R;
+import edu.gatech.cs2340.cs2340application.model.SourceReport;
 
 public class HomeScreenActivity extends AppCompatActivity {
-
-    private ListView mDrawerList;
-    private DrawerLayout mDrawerLayout;
     private ArrayAdapter<String> mAdapter;
     private ActionBarDrawerToggle mDrawerToggle;
     private String mActivityTitle;
@@ -25,7 +24,6 @@ public class HomeScreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homescreen);
-        mDrawerList = (ListView) findViewById(R.id.navList);
     }
 
     protected void onLogoutPressed(View view) {
@@ -43,10 +41,16 @@ public class HomeScreenActivity extends AppCompatActivity {
         finish();
     }
 
-    private void addDrawerItems() {
-        String[] osArray = { "Logout"};
-        mAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, osArray);
-        mDrawerList.setAdapter(mAdapter);
+    protected void purityReport(View view) {
+        Intent welcome = new Intent(this, PurityReportActivity.class);
+        startActivity(welcome);
+        finish();
+    }
+
+    protected void sourceReport(View view) {
+        Intent welcome = new Intent(this, SourceReportActivity.class);
+        startActivity(welcome);
+        finish();
     }
 
     @Override

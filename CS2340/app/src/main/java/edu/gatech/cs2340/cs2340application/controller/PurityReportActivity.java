@@ -35,7 +35,7 @@ public class PurityReportActivity extends AppCompatActivity {
         location = (EditText) findViewById(R.id.latitudeLongitude);
         contaminant = (EditText) findViewById(R.id.contaminant);
         virus = (EditText) findViewById(R.id.virus);
-        condition = (RadioGroup) findViewById(R.id.condition);
+        //condition = (RadioGroup) findViewById(R.id.condition);
     }
 
     protected void onSavePressed(View view) {
