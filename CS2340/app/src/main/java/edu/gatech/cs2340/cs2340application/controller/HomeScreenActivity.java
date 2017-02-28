@@ -53,6 +53,12 @@ public class HomeScreenActivity extends AppCompatActivity {
         finish();
     }
 
+    protected void onViewReportsClicked(View view) {
+        Intent welcome = new Intent(this, ViewReportsActivity.class);
+        startActivity(welcome);
+        finish();
+    }
+
     @Override
     public void onBackPressed() {
         return;

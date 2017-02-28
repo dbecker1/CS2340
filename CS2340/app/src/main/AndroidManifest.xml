@@ -29,9 +29,12 @@
         <activity
             android:name=".controller.RegistrationActivity"
             android:label="@string/title_activity_registration" />
-        <activity android:name=".controller.PurityReportActivity"></activity>
-        <activity android:name=".controller.SourceReportActivity" />
-        <activity android:name=".controller.ViewReportsActivity"></activity>
+        <activity android:name=".controller.PurityReportActivity"
+            android:label="New Purity Report"></activity>
+        <activity android:name=".controller.SourceReportActivity"
+            android:label="New Source Report"/>
+        <activity android:name=".controller.ViewReportsActivity"
+            android:label="View Reports"></activity>
     </application>
 
 </manifest>

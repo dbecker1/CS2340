@@ -10,4 +10,11 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="edu.gatech.cs2340.cs2340application.controller.ViewReportsActivity">
 
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/reportsView" />
 </RelativeLayout>

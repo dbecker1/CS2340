@@ -52,4 +52,15 @@
         android:layout_alignStart="@+id/source"
         android:onClick="purityReport"
         android:visibility="visible" />
+
+    <Button
+        android:text="View Reports"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/purity"
+        android:layout_alignLeft="@+id/purity"
+        android:layout_alignStart="@+id/purity"
+        android:layout_marginTop="26dp"
+        android:id="@+id/button2"
+        android:onClick="onViewReportsClicked" />
 </RelativeLayout>
