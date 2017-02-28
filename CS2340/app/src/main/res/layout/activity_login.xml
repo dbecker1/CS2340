@@ -11,7 +11,8 @@
             android:id="@+id/errorView"
             android:layout_weight="0.08"
             android:textColor="@android:color/holo_red_dark"
-            android:textAlignment="center" android:textSize="18sp"/>
+            android:textAlignment="center" android:textSize="18sp"
+            android:paddingTop="5dp"/>
 
     <TextView
             android:text="Username"
@@ -59,26 +60,29 @@
             android:id="@+id/LinearLayout02"
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
-            android:layout_alignParentBottom="true" android:weightSum="1">
+            android:layout_alignParentBottom="true" android:weightSum="1"
+            android:paddingLeft="10dp" android:paddingRight="10dp">
         <Button
                 android:text="Cancel"
-                android:layout_width="174dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/cancelButton"
                 android:onClick="onCancelPressed"
                 tools:text="Cancel" android:textColor="@color/reddish"
-                android:textSize="16sp" android:layout_weight="0.94">
+                android:textSize="16sp" android:layout_weight="0.50"
+                android:paddingLeft="10dp" android:paddingRight="5dp">
         </Button>
         <Button
                 android:text="Submit"
-                android:layout_width="192dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:id="@+id/submitButton"
                 android:onClick="onSubmitPressed"
                 android:textAlignment="center"
                 android:textColor="@android:color/holo_green_light"
                 tools:text="Submit" android:textSize="16sp"
-        >
+                android:layout_weight="0.48"
+                android:layout_width="wrap_content" android:paddingRight="10dp"
+                android:paddingLeft="5dp">
         </Button>
     </LinearLayout>
 
@@ -106,5 +110,7 @@
             android:textSize="16sp"
             android:textAlignment="center"
             android:onClick="onRegisterPressed" android:elevation="0dp"
-            android:textColor="@color/darkGrey" android:layout_weight="0.07"/>
+            android:textColor="@color/darkGrey" android:layout_weight="0.07"
+            android:paddingLeft="10dp" android:paddingRight="10dp"
+            android:layout_marginRight="10dp" android:layout_marginLeft="10dp"/>
 </LinearLayout>
