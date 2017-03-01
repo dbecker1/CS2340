@@ -58,10 +58,24 @@ public class RegistrationActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * When the Cancel button is pressed, the user is taken back to the Welcome Screen using default
+     * method of onBackPressed();
+     *
+     * @param view The current screen of the Registration Screen from activity_registration.xml
+     */
     protected void onCancelPressed(View view) {
         onBackPressed();
     }
 
+    /**
+     * When the Register button is pressed, the entered email and password are verified and then
+     * is passed on to Firebase. Then the user will be taken to the Edit Profile Screen to submit
+     * their profile information. If the entered email or password does not fit criteria, then the
+     * user is notified of unsuccessful registration.
+     *
+     * @param view The current screen of the Registration Screen from activity_registration.xml
+     */
     protected void onRegisterPressed(View view) {
         int typeOfError = checkValidInputs();
         if (typeOfError == 0) {
@@ -132,6 +146,12 @@ public class RegistrationActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Check if the input field of name, password, and email are valid inputs.
+     *
+     * @return the number that determines if the all the inputs are valid or if certain input are
+     * valid and other ones are not.
+     */
     private int checkValidInputs() {
         if (name.getText().toString().equals("")) {
             return 1;

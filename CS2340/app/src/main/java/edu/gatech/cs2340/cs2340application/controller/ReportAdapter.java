@@ -23,6 +23,12 @@ public class ReportAdapter extends BaseAdapter {
     private LayoutInflater mInflater;
     private ArrayList<Report> mDataSource;
 
+    /**
+     * Generates the data source for the list view.
+     *
+     * @param context
+     * @param items ArrayList containing all the reports submited
+     */
     public ReportAdapter(Context context, ArrayList<Report> items) {
         mContext = context;
         mDataSource = items;

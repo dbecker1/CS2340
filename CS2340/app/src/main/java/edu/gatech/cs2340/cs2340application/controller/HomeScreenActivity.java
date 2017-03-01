@@ -46,25 +46,42 @@ public class HomeScreenActivity extends AppCompatActivity {
      *
      * @param view The current screen of the Home Screen from activity_homescreen.xml
      */
-
     protected void onProfilePressed(View view) {
         Intent welcome = new Intent(this, ProfileActivity.class);
         startActivity(welcome);
         finish();
     }
 
+    /**
+     * When Submit Purity Report button is pressed, the user is taken to Purity Report Screen from
+     * activity_purity_report.xml
+     *
+     * @param view The current screen of the Home Screen from activity_homescreen.xml
+     */
     protected void purityReport(View view) {
         Intent welcome = new Intent(this, PurityReportActivity.class);
         startActivity(welcome);
         finish();
     }
 
+    /**
+     * When Submit Source Report button is pressed, the user is taken to the Source Report Screen
+     * from activity_sourcereport.xml
+     *
+     * @param view The current screen of the Home Screen from activity_homescreen.xml
+     */
     protected void sourceReport(View view) {
         Intent welcome = new Intent(this, SourceReportActivity.class);
         startActivity(welcome);
         finish();
     }
 
+    /**
+     * When View Reports buttons are pressed, the user is taken to the View Reports page from
+     * activity_view_reports.xml
+     *
+     * @param view The current screen of the Home Screen from activity_homescreen.xml
+     */
     protected void onViewReportsClicked(View view) {
         Intent welcome = new Intent(this, ViewReportsActivity.class);
         startActivity(welcome);

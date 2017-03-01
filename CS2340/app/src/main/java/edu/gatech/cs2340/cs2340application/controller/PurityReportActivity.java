@@ -38,6 +38,13 @@ public class PurityReportActivity extends AppCompatActivity {
         condition = (RadioGroup) findViewById(R.id.condition);
     }
 
+    /**
+     * When the Save button is pressed, the method extras the information entered such as report
+     * number, date and time of the report, reporter's name, etc.. and store it in a PurityReport
+     * object. Then the user is taken back to the Home Screen.
+     *
+     * @param view The current screen of the Purity Report Screen from activity_purity_report.xml
+     */
     protected void onSavePressed(View view) {
         int conditionID = condition.getCheckedRadioButtonId();
         RadioButton conditionButton = (RadioButton) condition.findViewById(conditionID);
@@ -69,6 +76,12 @@ public class PurityReportActivity extends AppCompatActivity {
         finish();
     }
 
+    /**
+     * When the Cancel button is pressed, no information entered is saved and the user is taken back
+     * to the Home Screen
+     *
+     * @param view The current screen of the Home Screen from activity_homescreen.xml
+     */
     protected void onCancelPressed(View view){
         Intent next = new Intent(PurityReportActivity.this, HomeScreenActivity.class);
         startActivity(next);

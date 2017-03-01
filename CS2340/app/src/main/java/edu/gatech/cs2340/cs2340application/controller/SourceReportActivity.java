@@ -36,6 +36,12 @@ public class SourceReportActivity extends AppCompatActivity {
         waterCondition = (RadioGroup) findViewById(R.id.waterCondition);
     }
 
+    /**
+     * When Save button is pressed, the method extracts all the information entered by the user
+     * and create a new Source Report object. Then the user is taken back to the Home Screen.
+     *
+     * @param view The current screen of the Source Report Screen from activity_sourcereport.xml
+     */
     protected void onSavePressed(View view) {
         int typeId = waterType.getCheckedRadioButtonId();
         RadioButton typeButton = (RadioButton) waterType.findViewById(typeId);
@@ -70,6 +76,12 @@ public class SourceReportActivity extends AppCompatActivity {
         finish();
     }
 
+    /**
+     * When the Cancel button is pressed, no information entered is saved, and the user is taken
+     * back to the Home Screen
+     *
+     * @param view The current screen of the Source Report Screen from activity_sourcereport.xml
+     */
     protected void onCancelPressed(View view){
         Intent next = new Intent(SourceReportActivity.this, HomeScreenActivity.class);
         startActivity(next);
