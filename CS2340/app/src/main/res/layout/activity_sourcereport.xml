@@ -40,7 +40,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="number"
+        android:inputType="text"
         android:ems="10"
         android:layout_below="@+id/latitudeLabel"
         android:layout_alignParentLeft="true"
@@ -60,14 +60,15 @@
 
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:layout_toRightOf="@+id/Other"
-        android:id="@+id/otherWaterType"
-        android:layout_alignBottom="@+id/Other"
-        android:layout_below="@+id/waterType" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:layout_toRightOf="@+id/Other"
+            android:id="@+id/otherWaterType"
+            android:layout_below="@+id/waterType"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
 
     <RadioGroup
         android:id="@+id/waterType"
