@@ -26,7 +26,7 @@ public class ReportAdapter extends BaseAdapter {
     /**
      * Generates the data source for the list view.
      *
-     * @param context
+     * @param context The current state of the application 
      * @param items ArrayList containing all the reports submited
      */
     public ReportAdapter(Context context, ArrayList<Report> items) {
