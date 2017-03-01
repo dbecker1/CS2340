@@ -26,6 +26,12 @@ public class HomeScreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_homescreen);
     }
 
+    /**
+     * When Logout button is pressed, the method sign the user out using Firebase's signOut()
+     * method and take the user back to the Welcome Screen
+     *
+     * @param view The current screen of Home Screen from activity_homescreen.xml
+     */
     protected void onLogoutPressed(View view) {
         FirebaseAuth auth = FirebaseAuth.getInstance();
         auth.signOut();
@@ -34,6 +40,12 @@ public class HomeScreenActivity extends AppCompatActivity {
         startActivity(welcome);
         finish();
     }
+
+    /**
+     * Go to the Profile Edit screen when the Profile button is pressed.
+     *
+     * @param view The current screen of the Home Screen from activity_homescreen.xml
+     */
 
     protected void onProfilePressed(View view) {
         Intent welcome = new Intent(this, ProfileActivity.class);

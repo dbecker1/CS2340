@@ -22,6 +22,7 @@ public class LoginActivity extends AppCompatActivity {
     private TextView errorView;
     private EditText username;
     private EditText password;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +34,15 @@ public class LoginActivity extends AppCompatActivity {
         password.setText("");
         mAuth = FirebaseAuth.getInstance();
     }
+
+    /**
+     * When the Submit button is pressed, the method extracts the entered username in
+     * usernameTextField and  password in passwordTextField to pass to fire base to sign in.
+     * If sign in is unsuccessful, an error message is shown. If sign in is successful, then the
+     * user is taken to the Home Screen.
+     *
+     * @param view The current screen of the Login Screen from activity_login.xml
+     */
 
     protected void onSubmitPressed(View view) {
         if (!username.getText().toString().equals("") && !password.getText().toString().equals("")){
@@ -57,9 +67,21 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Go back to the Welcome Screen using onBackPressed() when the cancel button is pressed
+     *
+     * @param view The current view of Login Screen from activity_login.xml
+     */
+
     protected void onCancelPressed(View view) {
         onBackPressed();
     }
+
+    /**
+     * Go to the Registration screen when the Register button is pressed
+     *
+     * @param view The current screen of Login Screen from activity_login.xml
+     */
 
     protected void onRegisterPressed(View view) {
         Intent registration = new Intent(this, RegistrationActivity.class);
