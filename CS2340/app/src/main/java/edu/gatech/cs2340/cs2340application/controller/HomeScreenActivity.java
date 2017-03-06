@@ -59,6 +59,12 @@ public class HomeScreenActivity extends AppCompatActivity {
         finish();
     }
 
+    protected void onAvailabilityClicked(View view) {
+        Intent availability = new Intent(this, ReportMapsActivity.class);
+        startActivity(availability);
+        finish();
+    }
+
     @Override
     public void onBackPressed() {
         return;

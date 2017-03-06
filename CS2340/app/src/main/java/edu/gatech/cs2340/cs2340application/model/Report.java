@@ -1,5 +1,8 @@
 package edu.gatech.cs2340.cs2340application.model;
 
+import com.google.android.gms.maps.model.LatLng;
+import com.google.firebase.database.Exclude;
+
 import java.util.Date;
 
 /**
@@ -7,6 +10,8 @@ import java.util.Date;
  */
 
 public class Report {
+    @Exclude
+    private LatLng latlng;
     private Date dateTime;
     private String reportNumber;
     private String userId;
@@ -45,4 +50,11 @@ public class Report {
         this.location = location;
     }
 
+    public LatLng getLatlng() {
+        return latlng;
+    }
+
+    public void setLatlng(LatLng latlng) {
+        this.latlng = latlng;
+    }
 }

@@ -1,5 +1,6 @@
 package edu.gatech.cs2340.cs2340application.controller;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -71,5 +72,12 @@ public class ViewReportsActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent next = new Intent(this, HomeScreenActivity.class);
+        startActivity(next);
+        finish();
     }
 }
