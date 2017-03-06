@@ -63,4 +63,15 @@
         android:layout_marginTop="26dp"
         android:id="@+id/button2"
         android:onClick="onViewReportsClicked" />
+
+    <Button
+        android:text="View Water Availability"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/button3"
+        android:layout_below="@+id/button2"
+        android:layout_alignLeft="@+id/button2"
+        android:layout_alignStart="@+id/button2"
+        android:onClick="onAvailabilityClicked" />
 </RelativeLayout>

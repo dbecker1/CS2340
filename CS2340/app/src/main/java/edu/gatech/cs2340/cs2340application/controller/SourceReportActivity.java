@@ -87,4 +87,11 @@ public class SourceReportActivity extends AppCompatActivity {
         startActivity(next);
         finish();
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent next = new Intent(this, HomeScreenActivity.class);
+        startActivity(next);
+        finish();
+    }
 }
