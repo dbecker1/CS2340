@@ -95,6 +95,11 @@ public class ProfileActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * When the Save button is pressed, this updates the user's profile.
+     *
+     * @param view The current screen of the Login Screen from activity_profile.xml
+     */
     protected void onSavePressed(View view) {
         int radioId = userType.getCheckedRadioButtonId();
         RadioButton radioButton = (RadioButton) userType.findViewById(radioId);
@@ -114,6 +119,11 @@ public class ProfileActivity extends AppCompatActivity {
         finish();
     }
 
+    /**
+     * Goes back to the home page on pressing cancel
+     *
+     * @param view The current screen of the Login Screen from activity_profile.xml
+     */
     protected void onCancelPressed(View view) {
         Intent next = new Intent(ProfileActivity.this, HomeScreenActivity.class);
         startActivity(next);
