@@ -50,6 +50,7 @@ public class PurityReport extends Report {
 
     /**
      * Return the contaminant PPM data of a water purity report.
+     *
      * @return the number of contaminant in parts-per-million measuring how much contaminant there
      * are in the water
      */

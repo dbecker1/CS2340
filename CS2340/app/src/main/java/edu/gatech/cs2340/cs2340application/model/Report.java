@@ -88,10 +88,22 @@ public class Report {
         this.location = location;
     }
 
+    /**
+     * Get the latitude and longitude of the report.
+     *
+     * @return the latitude and longitude of the report that represents its location to be used for
+     * Google Map display
+     */
     public LatLng getLatlng() {
         return latlng;
     }
 
+    /**
+     * Set the latitude and longitude of the report.
+     *
+     * @param latlng the latitude and longitude of the report that represents its location to be used for
+     * Google Map display
+     */
     public void setLatlng(LatLng latlng) {
         this.latlng = latlng;
     }

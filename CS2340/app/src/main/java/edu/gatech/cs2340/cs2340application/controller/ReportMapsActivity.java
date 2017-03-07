@@ -98,6 +98,11 @@ public class ReportMapsActivity extends FragmentActivity implements OnMapReadyCa
 
     }
 
+    /**
+     * Add the Marker onto the Map
+     *
+     * @param report the report that is used to construct the pin
+     */
     private void addMapMarker(Report report) {
         int comma = report.getLocation().indexOf(',');
         if (comma >= 0) {
@@ -112,6 +117,9 @@ public class ReportMapsActivity extends FragmentActivity implements OnMapReadyCa
         }
     }
 
+    /**
+     * Update the view of the map when the user moves the map around, changing the view.
+     */
     private void updateMap() {
         LatLngBounds.Builder builder = new LatLngBounds.Builder();
         for (Marker marker : markers) {

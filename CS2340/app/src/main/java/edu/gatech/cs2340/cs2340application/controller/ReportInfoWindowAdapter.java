@@ -24,6 +24,13 @@ public class ReportInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
     private LayoutInflater mInflater;
     private ArrayList<Report> mDataSource;
 
+    /**
+     * Generates the data source for the map.
+     *
+     * @param context the state of the application
+     * @param items the array list of reports that is to be represented on the map.
+     */
+
     public ReportInfoWindowAdapter(Context context, ArrayList<Report> items) {
         mContext = context;
         mDataSource = items;
