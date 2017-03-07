@@ -2,7 +2,7 @@
 
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+                xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -12,66 +12,87 @@
     android:background="#ffffffff">
 
     <Button
-        android:text="Edit Profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/profile"
-        android:onClick="onProfilePressed" />
-
+            android:text="Edit Profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/profile"
+            android:onClick="onProfilePressed"
+            android:layout_below="@+id/logout"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="11dp"/>
     <Button
-        android:text="Logout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:id="@+id/logout"
-        android:onClick="onLogoutPressed" />
-
+            android:text="Logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/logout"
+            android:onClick="onLogoutPressed"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_toRightOf="@+id/imageView"
+            android:layout_toEndOf="@+id/imageView"
+            android:textColor="@color/reddish"/>
     <Button
-        android:text="Submit Source Report"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/source"
-        android:layout_below="@+id/profile"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="11dp"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="19dp"
-        android:onClick="sourceReport" />
-
+            android:text="Submit Source Report"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/source"
+            android:onClick="sourceReport"
+            android:layout_marginTop="50dp"
+            android:layout_below="@+id/imageView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textColor="@color/colorPrimary"/>
     <Button
-        android:text="Submit Purity Report"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/purity"
-        android:layout_marginTop="14dp"
-        android:layout_below="@+id/source"
-        android:layout_alignLeft="@+id/source"
-        android:layout_alignStart="@+id/source"
-        android:onClick="purityReport"
-        android:visibility="visible" />
-
+            android:text="Submit Purity Report"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/purity"
+            android:onClick="purityReport"
+            android:visibility="visible"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textColor="@color/colorPrimary"/>
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@mipmap/rounded_icon"
+            android:id="@+id/imageView"
+            android:scaleType="fitStart"
+            android:layout_alignBottom="@+id/profile"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@+id/profile"
+            android:layout_alignParentTop="true"/>
     <Button
-        android:text="View Reports"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/purity"
-        android:layout_alignLeft="@+id/purity"
-        android:layout_alignStart="@+id/purity"
-        android:layout_marginTop="26dp"
-        android:id="@+id/button2"
-        android:onClick="onViewReportsClicked" />
-
+            android:text="View Water Availability"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button3"
+            android:onClick="onAvailabilityClicked"
+            android:layout_marginBottom="57dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
     <Button
-        android:text="View Water Availability"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:id="@+id/button3"
-        android:layout_below="@+id/button2"
-        android:layout_alignLeft="@+id/button2"
-        android:layout_alignStart="@+id/button2"
-        android:onClick="onAvailabilityClicked" />
+            android:text="View Reports"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button2"
+            android:onClick="onViewReportsClicked"
+            android:layout_above="@+id/button3"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="11dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textColor="@android:color/holo_green_dark"/>
 </RelativeLayout>
