@@ -118,7 +118,7 @@ public class ReportMapsActivity extends FragmentActivity implements OnMapReadyCa
     }
 
     /**
-     * Update the view of the map when the user moves the map around, changing the view.
+     * Update the view of the map when the user shifts the view
      */
     private void updateMap() {
         LatLngBounds.Builder builder = new LatLngBounds.Builder();
