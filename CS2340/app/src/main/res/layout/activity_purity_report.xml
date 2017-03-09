@@ -21,7 +21,8 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            tools:text="Location" android:textColor="@color/colorPrimary"/>
+            tools:text="Location" android:textColor="@color/colorPrimary"
+            android:textSize="17sp"/>
 
     <TextView
             android:text="(Latitude, Longitude)"
@@ -57,7 +58,7 @@
             android:textColor="@color/colorPrimary"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"/>
+            android:layout_alignParentStart="true" android:textSize="17sp"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -79,7 +80,7 @@
             android:layout_marginTop="15dp"
             android:layout_below="@+id/latitudeLongitude"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"/>
+            android:layout_alignParentStart="true" android:textSize="17sp"/>
     <TextView
             android:text="Contaminant PPM:"
             android:layout_width="wrap_content"
@@ -88,7 +89,7 @@
             android:textColor="@color/colorPrimary"
             android:layout_marginTop="58dp" android:layout_alignTop="@+id/virus"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"/>
+            android:layout_alignParentStart="true" android:textSize="17sp"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -154,7 +155,7 @@
             android:layout_alignRight="@+id/typeOfWater"
             android:layout_alignEnd="@+id/typeOfWater"
             android:layout_weight="0.48"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/reddish"
             android:onClick="onCancelPressed">
         </Button>
 
@@ -169,7 +170,7 @@
             android:layout_marginBottom="13dp"
             android:layout_weight="0.51"
             android:textAlignment="center"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@android:color/holo_green_light"
             android:onClick="onSavePressed">
         </Button>
 

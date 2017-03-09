@@ -59,8 +59,8 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:textAlignment="center"
-        android:textSize="24sp"
+        android:textSize="27sp"
         android:textColor="@android:color/background_light"
-        android:fontFamily="casual" />
+        android:fontFamily="cursive" />
 
 </RelativeLayout>
