@@ -3,6 +3,7 @@ package edu.gatech.cs2340.cs2340application.controller;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.view.View;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -13,6 +14,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,6 +28,7 @@ import edu.gatech.cs2340.cs2340application.R;
 import edu.gatech.cs2340.cs2340application.model.PurityReport;
 import edu.gatech.cs2340.cs2340application.model.Report;
 import edu.gatech.cs2340.cs2340application.model.SourceReport;
+import edu.gatech.cs2340.cs2340application.model.User;
 
 public class ReportMapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -58,7 +61,7 @@ public class ReportMapsActivity extends FragmentActivity implements OnMapReadyCa
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+        final DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
 
         mAdapter = new ReportInfoWindowAdapter(this, reports);
 
@@ -80,21 +83,36 @@ public class ReportMapsActivity extends FragmentActivity implements OnMapReadyCa
             }
         });
 
-        ref.child("purityReports").addValueEventListener(new ValueEventListener() {
+        ref.child("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
-                    PurityReport report = postSnapshot.getValue(PurityReport.class);
-                    reports.add(report);
-                    addMapMarker(report);
+                User user = dataSnapshot.getValue(User.class);
+                if(user.getUserType().equals("Worker") || user.getUserType().equals("Manager")) {
+                    ref.child("purityReports").addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                                PurityReport report = postSnapshot.getValue(PurityReport.class);
+                                reports.add(report);
+                                addMapMarker(report);
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+                            System.out.println("database error");
+                        }
+                    });
                 }
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                System.out.println("database error");
+
             }
         });
+
 
     }
 

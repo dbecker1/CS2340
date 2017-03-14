@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -21,6 +22,7 @@ import edu.gatech.cs2340.cs2340application.R;
 import edu.gatech.cs2340.cs2340application.model.PurityReport;
 import edu.gatech.cs2340.cs2340application.model.Report;
 import edu.gatech.cs2340.cs2340application.model.SourceReport;
+import edu.gatech.cs2340.cs2340application.model.User;
 
 public class ViewReportsActivity extends AppCompatActivity {
 
@@ -34,7 +36,7 @@ public class ViewReportsActivity extends AppCompatActivity {
 
         ListView reportsView = (ListView) findViewById(R.id.reportsView);
 
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+        final DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
 
 
         adapter = new ReportAdapter(this, reports);
@@ -56,21 +58,37 @@ public class ViewReportsActivity extends AppCompatActivity {
             }
         });
 
-        ref.child("purityReports").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
-                    PurityReport report = postSnapshot.getValue(PurityReport.class);
-                    reports.add(report);
-                }
-                adapter.notifyDataSetChanged();
-            }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                System.out.println("database error");
-            }
-        });
+
+        ref.child("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+            .addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    User user = dataSnapshot.getValue(User.class);
+                    if(user.getUserType().equals("Worker") || user.getUserType().equals("Manager")) {
+                        ref.child("purityReports").addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                                    PurityReport report = postSnapshot.getValue(PurityReport.class);
+                                    reports.add(report);
+                                }
+                                adapter.notifyDataSetChanged();
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+                                System.out.println("database error");
+                            }
+                        });
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
 
     }
 

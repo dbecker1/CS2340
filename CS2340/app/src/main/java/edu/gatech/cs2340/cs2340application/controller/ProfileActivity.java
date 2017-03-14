@@ -49,7 +49,7 @@ public class ProfileActivity extends AppCompatActivity {
                 HashMap<String, String> userMap =  (HashMap<String, String>)dataSnapshot.getValue();
                 existingProfile = dataSnapshot.getValue(User.class);
                 email.setText(existingProfile.getEmailAddress());
-                address.setText(existingProfile.getEmailAddress());
+                address.setText(existingProfile.getAddress());
                 int radioButton = -1;
                 switch(existingProfile.getUserType()) {
                     case "User":
