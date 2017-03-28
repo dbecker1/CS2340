@@ -32,42 +32,37 @@ public class HistoricalReportsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_historical_reports);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        boolean isVirus = true;
+        String location = "1,2";
+        String year = "2017";
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        HistoricalReportService service = new HistoricalReportService();
+        service.getReportData(isVirus, location, year, new ReportDataInterface() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void foundData(XYSeries data) {
+                createGraph(data);
             }
         });
 
+
+    }
+
+    protected void createGraph(XYSeries series) {
         // initialize our XYPlot reference:
         plot = (XYPlot) findViewById(R.id.plot);
 
         // create a couple arrays of y-values to plot:
-        
-        final Number[] domainLabels = {1, 2, 3, 6, 7, 8, 9, 10, 13, 14};
-        Number[] series1Numbers = {1, 4, 2, 8, 4, 16, 8, 32, 16, 64};
-        Number[] series2Numbers = {5, 2, 10, 5, 20, 10, 40, 20, 80, 40};
 
-        // turn the above arrays into XYSeries':
-        // (Y_VALS_ONLY means use the element index as the x value)
-        XYSeries series1 = new SimpleXYSeries(
-                Arrays.asList(series1Numbers), SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, "Series1");
-        XYSeries series2 = new SimpleXYSeries(
-                Arrays.asList(series2Numbers), SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, "Series2");
+        final String[] domainLabels = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+
 
         // create formatters to use for drawing a series using LineAndPointRenderer
         // and configure them from xml:
-        LineAndPointFormatter series1Format =
-                new LineAndPointFormatter(this, R.xml.line_point_formatter_with_labels);
-
-        LineAndPointFormatter series2Format =
-                new LineAndPointFormatter(this, R.xml.line_point_formatter_with_labels_2);
+        LineAndPointFormatter seriesFormat =
+                new LineAndPointFormatter(Color.RED, Color.GREEN, Color.BLUE, null);
 
         // add an "dash" effect to the series2 line:
-        series2Format.getLinePaint().setPathEffect(new DashPathEffect(new float[]{
+        seriesFormat.getLinePaint().setPathEffect(new DashPathEffect(new float[]{
 
                 // always use DP when specifying pixel sizes, to keep things consistent across devices:
                 PixelUtils.dpToPix(20),
@@ -75,15 +70,11 @@ public class HistoricalReportsActivity extends AppCompatActivity {
 
         // just for fun, add some smoothing to the lines:
         // see: http://androidplot.com/smooth-curves-and-androidplot/
-        series1Format.setInterpolationParams(
-                new CatmullRomInterpolator.Params(10, CatmullRomInterpolator.Type.Centripetal));
-
-        series2Format.setInterpolationParams(
+        seriesFormat.setInterpolationParams(
                 new CatmullRomInterpolator.Params(10, CatmullRomInterpolator.Type.Centripetal));
 
         // add a new series' to the xyplot:
-        plot.addSeries(series1, series1Format);
-        plot.addSeries(series2, series2Format);
+        plot.addSeries(series, seriesFormat);
 
         plot.getGraph().getLineLabelStyle(XYGraphWidget.Edge.BOTTOM).setFormat(new Format() {
             @Override
@@ -98,5 +89,4 @@ public class HistoricalReportsActivity extends AppCompatActivity {
             }
         });
     }
-
 }
