@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context="edu.gatech.cs2340.cs2340application.controller.HistoricalReportsActivity">
+<android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context="edu.gatech.cs2340.cs2340application.controller.HistoricalReportsActivity">
+
+    <LinearLayout
+            android:orientation="vertical"
+            xmlns:ap="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <com.androidplot.xy.XYPlot
+                style="@style/APDefacto.Light"
+                android:id="@+id/plot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                ap:title="A Simple XY Plot"
+                ap:rangeTitle="range"
+                ap:domainTitle="domain"
+                ap:lineLabels="left|bottom"
+                ap:lineLabelRotationBottom="-45"/>
+
+    </LinearLayout>
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -20,15 +40,5 @@
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
-
-    <include layout="@layout/content_historical_reports" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
 
 </android.support.design.widget.CoordinatorLayout>

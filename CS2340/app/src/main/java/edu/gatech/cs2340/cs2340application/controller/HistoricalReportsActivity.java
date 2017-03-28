@@ -75,18 +75,4 @@ public class HistoricalReportsActivity extends AppCompatActivity {
 
         // add a new series' to the xyplot:
         plot.addSeries(series, seriesFormat);
-
-        plot.getGraph().getLineLabelStyle(XYGraphWidget.Edge.BOTTOM).setFormat(new Format() {
-            @Override
-            public StringBuffer format(Object obj, StringBuffer toAppendTo, FieldPosition pos) {
-                int i = Math.round(((Number) obj).floatValue());
-                return toAppendTo.append(domainLabels[i]);
-            }
-
-            @Override
-            public Object parseObject(String source, ParsePosition pos) {
-                return null;
-            }
-        });
-    }
 }
