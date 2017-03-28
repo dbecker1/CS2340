@@ -33,7 +33,7 @@ public class HistoricalReportsActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         boolean isVirus = true;
-        String location = "1,2";
+        String location = "33.77,-84.3963";
         String year = "2017";
 
         HistoricalReportService service = new HistoricalReportService();
@@ -75,4 +75,17 @@ public class HistoricalReportsActivity extends AppCompatActivity {
 
         // add a new series' to the xyplot:
         plot.addSeries(series, seriesFormat);
+
+        plot.getGraph().getLineLabelStyle(XYGraphWidget.Edge.BOTTOM).setFormat(new Format() {
+            @Override
+            public StringBuffer format(Object obj, StringBuffer toAppendTo, FieldPosition pos) {
+                int i = Math.round(((Number) obj).floatValue());
+                return toAppendTo.append(domainLabels[i]);
+            }
+            @Override
+            public Object parseObject(String source, ParsePosition pos) {
+                return null;
+            }
+        });
+    }
 }

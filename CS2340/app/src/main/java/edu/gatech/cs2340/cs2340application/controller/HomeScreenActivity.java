@@ -30,6 +30,9 @@ public class HomeScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Intent welcome = new Intent(this, HistoricalReportsActivity.class);
+        startActivity(welcome);
+        finish();
         setContentView(R.layout.activity_homescreen);
 
         submitPurity = (Button)findViewById(R.id.purity);

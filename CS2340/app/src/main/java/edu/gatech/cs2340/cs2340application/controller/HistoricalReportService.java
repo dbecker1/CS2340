@@ -15,6 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.LinkedList;
 
 import edu.gatech.cs2340.cs2340application.model.PurityReport;
@@ -23,6 +24,9 @@ public class HistoricalReportService {
 
     public void getReportData(final boolean isVirus, final String location, final String year, final ReportDataInterface callback) {
         final LinkedList<Double>[] data = new LinkedList[12];
+        for(int i = 0; i < 12; i++) {
+            data[i] = new LinkedList<Double>();
+        }
 
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
 
@@ -33,13 +37,17 @@ public class HistoricalReportService {
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
                     PurityReport report = postSnapshot.getValue(PurityReport.class);
                     Double entry = 0.0;
-                    if (report.getDateTime().getYear() == yearInt && report.getLocation().equals(location)) {
+                    Calendar c = Calendar.getInstance();
+                    c.setTime(report.getDateTime());
+                    int selectedYear = c.get(Calendar.YEAR);
+                    if (selectedYear == yearInt && report.getLocation().equals(location)) {
                         if(isVirus) {
                             entry = report.getVirusPPM();
                         } else {
                             entry = report.getContainmentPPM();
                         }
-                        data[report.getDateTime().getMonth()].add(entry);
+                        int selectedMonth = c.get(Calendar.MONTH);
+                        data[selectedMonth - 1].add(entry);
                     }
                 }
 
