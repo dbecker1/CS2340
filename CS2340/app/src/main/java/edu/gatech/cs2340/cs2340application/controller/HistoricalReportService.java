@@ -46,19 +46,22 @@ public class HistoricalReportService {
                         } else {
                             entry = report.getContainmentPPM();
                         }
-                        int selectedMonth = c.get(Calendar.MONTH);
-                        data[selectedMonth - 1].add(entry);
+                        data[report.getDateTime().getMonth()].add(entry);
                     }
                 }
 
                 Number[] averagedData = new Number[12];
                 for(int i = 0; i < 12; i++) {
                     LinkedList<Double> list = data[i];
-                    double sum = 0.0;
-                    for(Double point : list) {
-                        sum += point;
+                    if(list.size() == 0) {
+                        averagedData[i] = 0;
+                    } else {
+                        double sum = 0.0;
+                        for(Double point : list) {
+                            sum += point;
+                        }
+                        averagedData[i] = sum / list.size();
                     }
-                    averagedData[i] = sum / list.size();
                 }
 
                 String label;

@@ -14,7 +14,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Calendar;
 import java.util.Date;
+import java.util.Random;
 import java.util.UUID;
 
 import edu.gatech.cs2340.cs2340application.R;
@@ -53,7 +55,11 @@ public class PurityReportActivity extends AppCompatActivity {
         FirebaseAuth auth = FirebaseAuth.getInstance();
 
         PurityReport report = new PurityReport();
-        report.setDateTime(new Date());
+        Date date = new Date();
+/*        Calendar c = Calendar.getInstance();
+        c.set(Calendar.MONTH, (new Random()).nextInt(12));
+        date = c.getTime();*/
+        report.setDateTime(date);
         report.setUserId(auth.getCurrentUser().getEmail());
         report.setReportNumber(UUID.randomUUID().toString());
         report.setCondition(conditionString);

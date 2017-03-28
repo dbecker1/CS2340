@@ -55,11 +55,18 @@ public class HistoricalReportsActivity extends AppCompatActivity {
 
         final String[] domainLabels = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
 
+/*        Number[] series1Numbers = {1, 4, 2, 8, 4, 16, 8, 32, 16, 64};
+
+        // turn the above arrays into XYSeries':
+        // (Y_VALS_ONLY means use the element index as the x value)
+
+        series = new SimpleXYSeries(
+                Arrays.asList(series1Numbers), SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, "Series1");*/
 
         // create formatters to use for drawing a series using LineAndPointRenderer
         // and configure them from xml:
         LineAndPointFormatter seriesFormat =
-                new LineAndPointFormatter(Color.RED, Color.GREEN, Color.BLUE, null);
+                new LineAndPointFormatter(this, R.xml.line_point_formatter_with_labels);
 
         // add an "dash" effect to the series2 line:
         seriesFormat.getLinePaint().setPathEffect(new DashPathEffect(new float[]{
