@@ -59,7 +59,11 @@
 
         <activity
             android:name=".controller.ReportMapsActivity"
-            android:label="@string/title_activity_report_maps"></activity>
+            android:label="@string/title_activity_report_maps" />
+        <activity
+            android:name=".controller.HistoricalReportsActivity"
+            android:label="@string/title_activity_historical_reports"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
