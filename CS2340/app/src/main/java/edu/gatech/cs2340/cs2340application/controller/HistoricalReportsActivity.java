@@ -25,6 +25,7 @@ import edu.gatech.cs2340.cs2340application.R;
 
 public class HistoricalReportsActivity extends AppCompatActivity {
 
+    private boolean isVirus;
     private XYPlot plot;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,14 +33,14 @@ public class HistoricalReportsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_historical_reports);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        boolean isVirus = true;
+        isVirus = true;
         String location = "33.77,-84.3963";
         String year = "2017";
 
         HistoricalReportService service = new HistoricalReportService();
         service.getReportData(isVirus, location, year, new ReportDataInterface() {
             @Override
-            public void foundData(XYSeries data) {
+            public void foundData(Number[] data) {
                 createGraph(data);
             }
         });
@@ -47,7 +48,7 @@ public class HistoricalReportsActivity extends AppCompatActivity {
 
     }
 
-    protected void createGraph(XYSeries series) {
+    protected void createGraph(Number[] data) {
         // initialize our XYPlot reference:
         plot = (XYPlot) findViewById(R.id.plot);
 
@@ -55,13 +56,13 @@ public class HistoricalReportsActivity extends AppCompatActivity {
 
         final String[] domainLabels = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
 
-/*        Number[] series1Numbers = {1, 4, 2, 8, 4, 16, 8, 32, 16, 64};
+        //Number[] seriesNumbers = {1, 4, 2, 8, 4, 16, 8, 32, 16, 64};
 
         // turn the above arrays into XYSeries':
         // (Y_VALS_ONLY means use the element index as the x value)
 
-        series = new SimpleXYSeries(
-                Arrays.asList(series1Numbers), SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, "Series1");*/
+        XYSeries series = new SimpleXYSeries(
+                Arrays.asList(data), SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, "Data");
 
         // create formatters to use for drawing a series using LineAndPointRenderer
         // and configure them from xml:
@@ -80,8 +81,13 @@ public class HistoricalReportsActivity extends AppCompatActivity {
         seriesFormat.setInterpolationParams(
                 new CatmullRomInterpolator.Params(10, CatmullRomInterpolator.Type.Centripetal));
 
+        String title = (isVirus) ? "Virus PPM" : "Contaminant PPM";
         // add a new series' to the xyplot:
+        plot.clear();
+
+        plot.setTitle(title);
         plot.addSeries(series, seriesFormat);
+        plot.redraw();
 
         plot.getGraph().getLineLabelStyle(XYGraphWidget.Edge.BOTTOM).setFormat(new Format() {
             @Override

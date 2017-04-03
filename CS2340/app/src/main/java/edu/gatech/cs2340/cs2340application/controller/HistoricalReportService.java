@@ -3,18 +3,12 @@ package edu.gatech.cs2340.cs2340application.controller;
 /**
  * Created by dbeckerfl on 3/27/17.
  */
-
-import com.androidplot.util.PixelUtils;
-import com.androidplot.xy.SimpleXYSeries;
-import com.androidplot.xy.XYSeries;
-import com.androidplot.xy.*;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.LinkedList;
 
@@ -64,17 +58,7 @@ public class HistoricalReportService {
                     }
                 }
 
-                String label;
-                if(isVirus) {
-                    label = "Virus";
-                } else {
-                    label = "Contaminant";
-                }
-
-                XYSeries series = new SimpleXYSeries(
-                        Arrays.asList(averagedData), SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, label);
-
-                callback.foundData(series);
+                callback.foundData(averagedData);
             }
 
             @Override
