@@ -26,16 +26,15 @@ public class HomeScreenActivity extends AppCompatActivity {
     private ActionBarDrawerToggle mDrawerToggle;
     private String mActivityTitle;
     private Button submitPurity;
+    private Button historicalReport;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Intent welcome = new Intent(this, HistoricalReportsActivity.class);
-        startActivity(welcome);
-        finish();
         setContentView(R.layout.activity_homescreen);
 
         submitPurity = (Button)findViewById(R.id.purity);
+        historicalReport = (Button)findViewById(R.id.historical_report);
 
         String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -46,6 +45,9 @@ public class HomeScreenActivity extends AppCompatActivity {
                 User user = dataSnapshot.getValue(User.class);
                 if(user.getUserType().equals("Worker") || user.getUserType().equals("Manager")) {
                     submitPurity.setVisibility(View.VISIBLE);
+                }
+                if (user.getUserType().equals("Manager")) {
+                    historicalReport.setVisibility(View.VISIBLE);
                 }
             }
 
@@ -121,6 +123,12 @@ public class HomeScreenActivity extends AppCompatActivity {
     protected void onAvailabilityClicked(View view) {
         Intent availability = new Intent(this, ReportMapsActivity.class);
         startActivity(availability);
+        finish();
+    }
+
+    protected void onHistoricalReportClicked(View view) {
+        Intent historical = new Intent(this, HistoryInformationActivity.class);
+        startActivity(historical);
         finish();
     }
 

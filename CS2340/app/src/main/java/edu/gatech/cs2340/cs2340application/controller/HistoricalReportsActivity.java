@@ -33,9 +33,11 @@ public class HistoricalReportsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_historical_reports);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        isVirus = true;
-        String location = "33.77,-84.3963";
-        String year = "2017";
+        String location = getIntent().getExtras().getString("location");
+        String year = getIntent().getExtras().getString("year");
+        String type = getIntent().getExtras().getString("typeOfContaminant");
+        isVirus = type.equals("virus");
+        //String location = "33.77,-84.3963";
 
         HistoricalReportService service = new HistoricalReportService();
         service.getReportData(isVirus, location, year, new ReportDataInterface() {
