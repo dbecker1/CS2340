@@ -93,7 +93,10 @@ public class HistoryInformationActivity extends AppCompatActivity {
     }
 
 
-
-
-
+    @Override
+    public void onBackPressed() {
+        Intent home = new Intent(this, HomeScreenActivity.class);
+        startActivity(home);
+        finish();
+    }
 }
