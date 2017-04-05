@@ -4,18 +4,23 @@ import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 
-import java.util.HashMap;
-
 import edu.gatech.cs2340.cs2340application.R;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
- * Created by bzhang345 on 2/20/17.
+ * Created by bzhang345 on 2/20/17. Modified for email verification by Cliff P.
  */
 
 public class User {
+
     protected String emailAddress;
     protected String userType;
     protected String address;
+    private static final String EMAIL_PATTERN =
+            "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                    + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 
     /**
      * Overloading with a constructor of the User class with no assignment to the instance
@@ -50,9 +55,19 @@ public class User {
      * Sets the user's email address
      *
      * @param emailAddress a String representation of the user's email address
+     * @return whether or not the email was valid and was then properly set
      */
-    public void setEmailAddress(String emailAddress) {
-        this.emailAddress = emailAddress;
+    public boolean setEmailAddress(String emailAddress) {
+        if (emailAddress == null || emailAddress.length() == 0) {
+            return false;
+        }
+        Pattern pattern = Pattern.compile(EMAIL_PATTERN);
+        Matcher matcher = pattern.matcher(emailAddress);
+        if (matcher.matches()) {
+            this.emailAddress = emailAddress;
+            return true;
+        }
+        return false;
     }
 
     /**
