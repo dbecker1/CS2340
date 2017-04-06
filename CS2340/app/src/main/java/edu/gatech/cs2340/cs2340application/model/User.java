@@ -84,8 +84,19 @@ public class User {
      *
      * @param userType a String representation of the the user account type
      */
-    public void setUserType(String userType) {
-        this.userType = userType;
+    public boolean setUserType(String userType) {
+
+        if (userType == null || userType.length() == 0) {
+            return false;
+        }
+        if (userType.compareToIgnoreCase("User") == 0
+                || userType.compareToIgnoreCase("Worker") == 0
+                || userType.compareToIgnoreCase("Manager") == 0
+                || userType.compareToIgnoreCase("Administrator") == 0) {
+            this.userType = userType;
+            return true;
+        }
+        return false;
     }
 
     /**
