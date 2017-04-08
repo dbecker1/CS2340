@@ -31,9 +31,11 @@ public class HistoricalReportService {
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
                     PurityReport report = postSnapshot.getValue(PurityReport.class);
                     Double entry = 0.0;
-                    Calendar c = Calendar.getInstance();
-                    c.setTime(report.getDateTime());
-                    int selectedYear = c.get(Calendar.YEAR);
+
+                    String yearString = report.getDateTimeString().substring(report.getDateTimeString().length() - 5);
+                    int selectedYear = Integer.parseInt(yearString);
+
+
                     if (selectedYear == yearInt && report.getLocation().equals(location)) {
                         if(isVirus) {
                             entry = report.getVirusPPM();

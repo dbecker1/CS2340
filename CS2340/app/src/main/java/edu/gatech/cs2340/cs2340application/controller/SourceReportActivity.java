@@ -54,7 +54,7 @@ public class SourceReportActivity extends AppCompatActivity {
         FirebaseAuth auth = FirebaseAuth.getInstance();
 
         SourceReport report = new SourceReport();
-        report.setDateTime(new Date());
+        report.setDateTimeString(new Date().toString());
         report.setUserId(auth.getCurrentUser().getEmail());
         report.setReportNumber(UUID.randomUUID().toString());
         report.setCondition(conditionString);

@@ -59,7 +59,7 @@ public class PurityReportActivity extends AppCompatActivity {
 /*        Calendar c = Calendar.getInstance();
         c.set(Calendar.MONTH, (new Random()).nextInt(12));
         date = c.getTime();*/
-        report.setDateTime(date);
+        report.setDateTimeString(date.toString());
         report.setUserId(auth.getCurrentUser().getEmail());
         report.setReportNumber(UUID.randomUUID().toString());
         report.setCondition(conditionString);

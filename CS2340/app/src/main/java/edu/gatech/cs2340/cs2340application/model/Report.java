@@ -16,6 +16,7 @@ public class Report {
     private String reportNumber;
     private String userId;
     private String location;
+    private String dateTimeString;
 
     /**
      * Returns the report number of a water report
@@ -51,6 +52,13 @@ public class Report {
     public void setDateTime(Date dateTime) {
         this.dateTime = dateTime;
     }
+
+
+    public void setDateTimeString(String dateTime) {
+        this.dateTimeString = dateTime;
+    }
+
+    public String getDateTimeString() {return dateTimeString;}
 
     /**
      * Return the User ID of the User who submitted/written the report

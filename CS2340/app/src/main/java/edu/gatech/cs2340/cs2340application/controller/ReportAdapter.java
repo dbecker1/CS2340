@@ -63,7 +63,7 @@ public class ReportAdapter extends BaseAdapter {
 
         ((TextView) rowView.findViewById(R.id.location)).setText(report.getLocation());
         ((TextView) rowView.findViewById(R.id.submittedBy)).setText(report.getUserId());
-        ((TextView) rowView.findViewById(R.id.date)).setText(report.getDateTime().toString());
+        ((TextView) rowView.findViewById(R.id.date)).setText(report.getDateTimeString());
         boolean isPurity = report.getClass().equals(PurityReport.class);
         ((TextView) rowView.findViewById(R.id.reportType)).setText((isPurity) ? "Purity" : "Source");
         return rowView;

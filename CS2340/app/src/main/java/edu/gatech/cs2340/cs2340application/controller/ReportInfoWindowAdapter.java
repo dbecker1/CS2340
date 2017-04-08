@@ -49,7 +49,7 @@ public class ReportInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
 
         ((TextView) infoView.findViewById(R.id.location)).setText(report.getLocation());
         ((TextView) infoView.findViewById(R.id.submittedBy)).setText(report.getUserId());
-        ((TextView) infoView.findViewById(R.id.date)).setText(report.getDateTime().toString());
+        ((TextView) infoView.findViewById(R.id.date)).setText(report.getDateTimeString());
         boolean isPurity = report.getClass().equals(PurityReport.class);
         ((TextView) infoView.findViewById(R.id.reportType)).setText((isPurity) ? "Purity" : "Source");
         return infoView;
