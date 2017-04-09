@@ -14,6 +14,9 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Calendar;
 import java.util.LinkedList;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 import edu.gatech.cs2340.cs2340application.model.PurityReport;
 
@@ -35,8 +38,10 @@ public class HistoricalReportService {
                     PurityReport report = postSnapshot.getValue(PurityReport.class);
                     Double entry = 0.0;
 
-                    String yearString = report.getDateTimeString().substring(report.getDateTimeString().length() - 5);
+                    String yearString = report.getDateTimeString().substring(report.getDateTimeString().length() - 4);
                     int selectedYear = Integer.parseInt(yearString);
+
+
 
 
                     if (selectedYear == yearInt && report.getLocation().equals(location)) {
@@ -45,7 +50,16 @@ public class HistoricalReportService {
                         } else {
                             entry = report.getContainmentPPM();
                         }
-                        data[report.getDateTime().getMonth()].add(entry);
+
+                        try{
+
+                            SimpleDateFormat sdf = new SimpleDateFormat("EEE MMM dd hh:mm:ss zzz yyyy", new Locale("US"));
+                            Date date = sdf.parse(report.getDateTimeString());
+                            data[date.getMonth()].add(entry);
+
+                        } catch (java.text.ParseException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
 
