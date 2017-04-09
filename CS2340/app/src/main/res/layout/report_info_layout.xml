@@ -11,14 +11,14 @@
         android:layout_height="20dp">
 
         <TextView
-            android:text="Report Location:"
+            android:text="@string/report_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView10"
             android:layout_weight="0.78" />
 
         <TextView
-            android:text="TextView"
+            android:text=""
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/location"
@@ -31,14 +31,14 @@
         android:layout_height="20dp">
 
         <TextView
-            android:text="Report Date:"
+            android:text="@string/report_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView11"
             android:layout_weight="1" />
 
         <TextView
-            android:text="TextView"
+            android:text=""
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/date"
@@ -53,14 +53,14 @@
         android:layout_weight="1">
 
         <TextView
-            android:text="Submitted By:"
+            android:text="@string/submitted"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView12"
             android:layout_weight="0.94" />
 
         <TextView
-            android:text="TextView"
+            android:text=""
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/submittedBy"
@@ -75,14 +75,14 @@
         android:layout_weight="0.94">
 
         <TextView
-            android:text="Report Type"
+            android:text="@string/report_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView19"
             android:layout_weight="1" />
 
         <TextView
-            android:text="TextView"
+            android:text=""
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/reportType"

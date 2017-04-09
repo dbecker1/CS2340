@@ -89,7 +89,7 @@ public class RegistrationActivity extends AppCompatActivity {
                             // the auth state listener will be notified and logic to handle the
                             // signed in user can be handled in the listener.
                             if (!task.isSuccessful()) {
-                                errorText.setText("Error: Unable to creat user.");
+                                errorText.setText(getResources().getString(R.string.unable_error));
                             } else {
                                 Intent next = new Intent(RegistrationActivity.this, ProfileActivity.class);
                                 startActivity(next);

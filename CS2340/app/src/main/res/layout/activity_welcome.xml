@@ -9,12 +9,12 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
                 android:background="@mipmap/water_droplet"
-    tools:context="edu.gatech.cs2340.cs2340application.MainActivity">
+    tools:context="edu.gatech.cs2340.cs2340application.controller.WelcomeActivity">
 
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Welcome to Water Reporter"
+            android:text="@string/welcome"
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="@color/white"
@@ -27,7 +27,7 @@
     <Button android:id="@+id/login_button"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Login"
+            android:text="@string/login"
             android:background="@color/greyBlue"
             android:layout_marginTop="85dp" android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
@@ -39,7 +39,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@color/greyBlue"
-            android:text="Register"
+            android:text="@string/register"
             android:layout_marginTop="14dp"
             android:onClick="onRegisterPressed"
             android:layout_below="@+id/login_button"
@@ -48,7 +48,7 @@
             android:textColor="@color/white" android:textSize="18sp"/>
 
     <TextView
-        android:text="Raindrop, drop top"
+        android:text="@string/raindrop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/textView"

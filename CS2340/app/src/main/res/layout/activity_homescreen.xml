@@ -12,7 +12,7 @@
     android:background="#ffffffff">
 
     <Button
-            android:text="Edit Profile"
+            android:text="@string/edit_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/profile"
@@ -22,7 +22,7 @@
             android:layout_alignParentEnd="true"
             android:layout_marginTop="11dp"/>
     <Button
-            android:text="Logout"
+            android:text="@string/logout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/logout"
@@ -34,7 +34,7 @@
             android:layout_toEndOf="@+id/imageView"
             android:textColor="@color/reddish"/>
     <Button
-            android:text="Submit Source Report"
+            android:text="@string/submit_source"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/source"
@@ -47,7 +47,7 @@
             android:layout_alignParentEnd="true"
             android:textColor="@color/colorPrimary"/>
     <Button
-            android:text="Submit Purity Report"
+            android:text="@string/submit_purity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/purity"
@@ -69,9 +69,11 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_toStartOf="@+id/profile"
-            android:layout_alignParentTop="true"/>
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/profile"
+            android:contentDescription="@string/image_desc"/>
     <Button
-            android:text="View Water Availability"
+            android:text="@string/view_water"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/button3"
@@ -83,7 +85,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"/>
     <Button
-            android:text="View Reports"
+            android:text="@string/view_report"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/button2"
@@ -97,7 +99,7 @@
             android:textColor="@android:color/holo_green_dark"/>
 
     <Button
-        android:text="Historical Report"
+        android:text="@string/historical_report"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

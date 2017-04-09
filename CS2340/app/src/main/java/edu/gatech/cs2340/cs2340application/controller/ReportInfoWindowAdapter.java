@@ -38,7 +38,7 @@ public class ReportInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
     @Override
     public View getInfoWindow(Marker marker) {
         // Get view for row item
-        View infoView = mInflater.inflate(R.layout.report_info_layout, null);
+        View infoView = View.inflate(mContext, R.layout.report_info_layout, null);
 
         Report report = null;
         for (Report r : mDataSource) {

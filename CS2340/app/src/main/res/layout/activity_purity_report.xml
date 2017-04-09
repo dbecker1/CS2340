@@ -12,7 +12,7 @@
         tools:context="edu.gatech.cs2340.cs2340application.controller.PurityReportActivity">
 
     <TextView
-            android:text="Location"
+            android:text="@string/location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -25,7 +25,7 @@
             android:textSize="17sp"/>
 
     <TextView
-            android:text="(Latitude, Longitude)"
+            android:text="@string/lat_long"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="13dp"
@@ -34,7 +34,8 @@
             android:layout_below="@+id/locationLabel"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:labelFor="@+id/latitudeLongitude"/>
 
 
     <EditText
@@ -43,7 +44,7 @@
             android:inputType="text"
             android:ems="10"
             android:id="@+id/latitudeLongitude"
-            android:text="0,0"
+            android:text="@string/zero"
             android:layout_below="@+id/latitudeLabel"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -51,14 +52,15 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"/>
     <TextView
-            android:text="Virus PPM:"
+            android:text="@string/virus_ppm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView14"
             android:textColor="@color/colorPrimary"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" android:textSize="17sp"/>
+            android:layout_alignParentStart="true" android:textSize="17sp"
+            android:labelFor="@+id/virus"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -72,7 +74,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"/>
     <TextView
-            android:text="Overall Condition"
+            android:text="@string/overall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/typeOfWater"
@@ -82,14 +84,15 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" android:textSize="17sp"/>
     <TextView
-            android:text="Contaminant PPM:"
+            android:text="@string/contaminant_ppm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/contaminantLabel"
             android:textColor="@color/colorPrimary"
             android:layout_marginTop="58dp" android:layout_alignTop="@+id/virus"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" android:textSize="17sp"/>
+            android:layout_alignParentStart="true" android:textSize="17sp"
+            android:labelFor="@+id/contaminant"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -116,21 +119,21 @@
 
 
         <RadioButton
-                android:text="Safe"
+                android:text="@string/safe"
                 android:layout_width="wrap_content"
                 android:id="@+id/bottledWaterType"
                 android:layout_weight="0.12"
                 android:layout_height="wrap_content"/>
 
         <RadioButton
-                android:text="Unsafe"
+                android:text="@string/unsafe"
                 android:layout_width="wrap_content"
                 android:id="@+id/radioButton8"
                 android:layout_weight="0.21"
                 android:layout_height="wrap_content"/>
 
         <RadioButton
-            android:text="Treatable"
+            android:text="@string/treatable"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/lakeWaterType"/>
@@ -148,7 +151,7 @@
         android:layout_alignParentStart="true">
 
         <Button
-            android:text="Cancel"
+            android:text="@string/cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/cancelButton"
@@ -161,7 +164,7 @@
         </Button>
 
         <Button
-            android:text="Save"
+            android:text="@string/save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/saveButton"

@@ -8,10 +8,10 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="edu.gatech.cs2340.cs2340application.ReportActivity">
+    tools:context="edu.gatech.cs2340.cs2340application.controller.SourceReportActivity">
 
     <TextView
-        android:text="Location"
+        android:text="@string/location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -25,7 +25,7 @@
         android:textSize="17sp" />
 
     <TextView
-        android:text="(Latitude, Longitude)"
+        android:text="@string/lat_long"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="13dp"
@@ -35,7 +35,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:textSize="18sp"
-        android:textColor="@android:color/darker_gray" />
+        android:textColor="@android:color/darker_gray"
+        android:labelFor="@+id/latitudeLongitude"/>
 
     <EditText
             android:layout_width="wrap_content"
@@ -46,11 +47,12 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:id="@+id/latitudeLongitude"
-            android:text="0,0" android:layout_alignParentRight="true"
+            android:text="@string/zero_text"
+            android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"/>
 
     <TextView
-            android:text="Type of Water"
+            android:text="@string/type_water"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/latitudeLongitude"
@@ -70,10 +72,10 @@
         android:layout_below="@+id/typeOfWater"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
-        `
+
 
         <RadioButton
-            android:text="Bottled"
+            android:text="@string/bottled"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.19"
@@ -84,7 +86,7 @@
             android:textSize="10sp" />
 
         <RadioButton
-            android:text="Lake"
+            android:text="@string/lake"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/typeOfWater"
@@ -94,7 +96,7 @@
             android:layout_weight="0.23" />
 
         <RadioButton
-            android:text="Well"
+            android:text="@string/well"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/bottledWaterType"
@@ -105,7 +107,7 @@
             android:layout_weight="0.20" />
 
         <RadioButton
-            android:text="Spring"
+            android:text="@string/spring"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@+id/otherWaterType"
@@ -115,7 +117,7 @@
             android:layout_weight="0.26" />
 
         <RadioButton
-            android:text="Stream"
+            android:text="@string/stream"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/wellWaterType"
@@ -128,7 +130,7 @@
     </RadioGroup>
 
     <TextView
-            android:text="Other Type:"
+            android:text="@string/other_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/Other"
@@ -140,7 +142,7 @@
             android:layout_marginTop="15dp"/>
 
     <TextView
-            android:text="Condition of Water"
+            android:text="@string/condition_water"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/conditionOfWaterLabel"
@@ -149,7 +151,8 @@
             android:layout_alignParentStart="true"
             android:layout_marginTop="5dp"
             android:textColor="@color/colorPrimary" android:textSize="17sp"
-            android:layout_marginBottom="5dp"/>
+            android:layout_marginBottom="5dp"
+            android:labelFor="@+id/otherWaterType"/>
 
     <RadioGroup
         android:id="@+id/waterCondition"
@@ -160,10 +163,10 @@
         android:layout_below="@+id/conditionOfWaterLabel"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
-        `
+
 
         <RadioButton
-                android:text="Waste"
+                android:text="@string/waste"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/conditionOfWaterLabel"
@@ -173,32 +176,29 @@
                 android:textSize="10sp" android:layout_weight="0.33"/>
 
         <RadioButton
-            android:text="Treatable-Clear"
+            android:text="@string/treatable_clear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="10sp"
             android:layout_alignBaseline="@+id/wasteCondition"
             android:layout_alignBottom="@+id/wasteCondition"
-            android:id="@+id/treatableMuddyCondition"
             android:layout_weight="0.70"/>
 
         <RadioButton
-            android:text="Treatable-Muddy"
+            android:text="@string/treatable_muddy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/treatableMuddyCondition"
             android:textSize="10sp"
             android:layout_alignBaseline="@+id/wasteCondition"
             android:layout_alignBottom="@+id/wasteCondition" />
 
         <RadioButton
-            android:text="Potable"
+            android:text="@string/potable"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/treatableMuddyCondition"
             android:layout_toRightOf="@+id/treatableMuddyCondition"
             android:layout_toEndOf="@+id/treatableMuddyCondition"
-            android:id="@+id/potableCondition"
             android:textSize="10sp" />
 
 
@@ -216,7 +216,7 @@
         android:layout_marginTop="40dp">
 
         <Button
-            android:text="Cancel"
+            android:text="@string/cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/cancelButton"
@@ -229,7 +229,7 @@
         </Button>
 
         <Button
-            android:text="Save"
+            android:text="@string/save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/saveButton"
