@@ -168,4 +168,20 @@ public class RegistrationActivity extends AppCompatActivity {
         return 0;
     }
 
+    public int checkValidInputs(String name, String password, String confirmPassword, String id) {
+        if (name.equals("")) {
+            return 1;
+        }
+        if (!password.equals(confirmPassword.toString())
+                && !password.equals("")) {
+            return 2;
+        } else if (password.toString().equals("")) {
+            return 3;
+        }
+        if (id.equals("")) {
+            return 4;
+        }
+        return 0;
+    }
+
 }
