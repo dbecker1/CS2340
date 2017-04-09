@@ -17,9 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:id="@+id/locationLabel"
-            android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             tools:text="Location" android:textColor="@color/colorPrimary"
             android:textSize="17sp"/>
@@ -32,7 +30,6 @@
             android:id="@+id/latitudeLabel"
             tools:text="(Latitude, Longitude)"
             android:layout_below="@+id/locationLabel"
-            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:textSize="18sp"
             android:labelFor="@+id/latitudeLongitude"/>
@@ -46,10 +43,8 @@
             android:id="@+id/latitudeLongitude"
             android:text="@string/zero"
             android:layout_below="@+id/latitudeLabel"
-            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginTop="15dp"
-            android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"/>
     <TextView
             android:text="@string/virus_ppm"
@@ -58,7 +53,6 @@
             android:id="@+id/textView14"
             android:textColor="@color/colorPrimary"
             android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" android:textSize="17sp"
             android:labelFor="@+id/virus"/>
     <EditText
@@ -69,9 +63,7 @@
             android:id="@+id/virus"
             android:layout_marginTop="15dp"
             android:layout_below="@+id/textView14"
-            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"/>
     <TextView
             android:text="@string/overall"
@@ -81,7 +73,6 @@
             android:textColor="@color/colorPrimary"
             android:layout_marginTop="15dp"
             android:layout_below="@+id/latitudeLongitude"
-            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" android:textSize="17sp"/>
     <TextView
             android:text="@string/contaminant_ppm"
@@ -90,7 +81,6 @@
             android:id="@+id/contaminantLabel"
             android:textColor="@color/colorPrimary"
             android:layout_marginTop="58dp" android:layout_alignTop="@+id/virus"
-            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" android:textSize="17sp"
             android:labelFor="@+id/contaminant"/>
     <EditText
@@ -101,9 +91,7 @@
             android:layout_marginTop="17dp"
             android:id="@+id/contaminant"
             android:layout_below="@+id/contaminantLabel"
-            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"/>
 
 
@@ -114,7 +102,6 @@
             android:orientation="horizontal"
             android:weightSum="1"
             android:layout_below="@+id/typeOfWater"
-            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" android:paddingTop="15dp">
 
 
@@ -147,7 +134,6 @@
         android:weightSum="1"
         android:paddingLeft="10dp" android:paddingRight="10dp"
         android:layout_below="@+id/contaminant"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
         <Button
@@ -156,7 +142,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/cancelButton"
             android:layout_above="@+id/LinearLayout02"
-            android:layout_alignRight="@+id/typeOfWater"
             android:layout_alignEnd="@+id/typeOfWater"
             android:layout_weight="0.48"
             android:textColor="@color/reddish"
@@ -169,7 +154,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/saveButton"
             android:layout_above="@+id/LinearLayout02"
-            android:layout_toRightOf="@+id/otherWaterType"
             android:layout_toEndOf="@+id/otherWaterType"
             android:layout_marginBottom="13dp"
             android:layout_weight="0.51"

@@ -24,7 +24,6 @@
         android:inputType="number"
         android:hint="@string/year"
         android:layout_above="@+id/contaminantType"
-        android:layout_alignLeft="@+id/textView13"
         android:layout_alignStart="@+id/textView13"
         android:layout_marginBottom="38dp" />
 
@@ -32,13 +31,10 @@
         android:id="@+id/contaminantType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="12dp"
         android:layout_marginStart="12dp"
         android:layout_above="@+id/cancelButton"
-        android:layout_alignLeft="@+id/year"
         android:layout_alignStart="@+id/year"
         android:layout_marginBottom="17dp"
-        android:layout_alignRight="@+id/submitButton"
         android:layout_alignEnd="@+id/submitButton">
 
         <RadioButton
@@ -48,9 +44,7 @@
             android:layout_alignBaseline="@+id/contaminantButton"
             android:layout_alignBottom="@+id/contaminantButton"
             android:layout_alignEnd="@+id/submitButton"
-            android:layout_alignRight="@+id/submitButton"
             android:layout_marginEnd="42dp"
-            android:layout_marginRight="42dp"
             android:layout_weight="1"
             android:text="@string/virus" />
 
@@ -59,7 +53,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@+id/cancelButton"
-            android:layout_alignLeft="@+id/year"
             android:layout_alignStart="@+id/year"
             android:layout_marginBottom="44dp"
             android:layout_weight="1"
@@ -72,7 +65,6 @@
         android:layout_height="wrap_content"
         android:text="@string/submit"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/year"
         android:layout_toEndOf="@+id/year"
         android:layout_marginBottom="124dp"
         android:onClick="onSubmitPressed" />
@@ -84,7 +76,6 @@
         android:text="@string/cancel"
         android:layout_alignBaseline="@+id/submitButton"
         android:layout_alignBottom="@+id/submitButton"
-        android:layout_marginRight="18dp"
         android:layout_marginEnd="18dp"
         android:onClick="onCancelPressed" />
 
@@ -93,7 +84,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/year"
-        android:layout_alignRight="@+id/year"
         android:layout_below="@+id/textView13"
         android:layout_marginTop="21dp"
         android:ems="10"

@@ -14,7 +14,8 @@
 
     <TextView
         android:text="@string/email"
-        android:paddingLeft="15dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView3"
@@ -28,11 +29,12 @@
             android:ems="10"
             android:id="@+id/nameTextField"
             style="@style/Widget.AppCompat.EditText"
-            android:layout_marginLeft="15dp" android:layout_weight="0.11"/>
+            android:layout_marginStart="15dp" android:layout_weight="0.11"/>
 
     <TextView
         android:text="@string/password"
-        android:paddingLeft="15dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView5"
@@ -45,11 +47,12 @@
             android:inputType="textPassword"
             android:ems="10"
             android:id="@+id/passwordTextField"
-            android:layout_marginLeft="15dp" android:layout_weight="0.11"/>
+            android:layout_marginStart="15dp" android:layout_weight="0.11"/>
 
     <TextView
         android:text="@string/retype_password"
-        android:paddingLeft="15dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView6"
@@ -62,11 +65,12 @@
             android:inputType="textPassword"
             android:ems="10"
             android:id="@+id/retypePasswordTextField"
-            android:layout_marginLeft="15dp" android:layout_weight="0.13"/>
+            android:layout_marginStart="15dp" android:layout_weight="0.13"/>
 
     <TextView
         android:text="@string/id_num"
-        android:paddingLeft="15dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView7"
@@ -78,7 +82,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/idTextField" android:layout_marginLeft="15dp"
+            android:id="@+id/idTextField" android:layout_marginStart="15dp"
             android:layout_weight="0.11"/>
 
     <!--<TextView
@@ -146,7 +150,7 @@
                 android:onClick="onCancelPressed"
                 android:textColor="@color/reddish" android:textSize="15sp"
                 android:layout_marginTop="15dp"
-                android:layout_marginRight="5dp">
+                android:layout_marginStart="5dp">
         </Button>
 
         <Button

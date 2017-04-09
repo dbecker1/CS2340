@@ -21,7 +21,8 @@
             android:id="@+id/usernameLabel"
             tools:text="Username"
             android:textAppearance="@android:style/TextAppearance.Material.Medium"
-            android:paddingLeft="15sp"
+            android:paddingStart="15sp"
+            android:paddingEnd="15sp"
             android:layout_weight="0.09"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="20sp"
@@ -34,7 +35,7 @@
             android:ems="10"
             android:id="@+id/usernameTextField"
             android:textAlignment="viewStart" android:textSize="20sp"
-            android:layout_marginLeft="15dp"/>
+            android:layout_marginStart="15dp"/>
 
     <TextView
             android:text="@string/password"
@@ -44,7 +45,8 @@
             android:layout_weight="0.10"
             tools:text="Password"
             android:textAppearance="@android:style/TextAppearance.Material.Medium"
-            android:paddingLeft="15sp"
+            android:paddingStart="15sp"
+            android:paddingEnd="15sp"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="20sp"
             android:labelFor="@+id/passwordTextField"/>
@@ -56,7 +58,7 @@
             android:ems="10"
             android:id="@+id/passwordTextField"
             android:layout_weight="0.08" android:textSize="20sp"
-            android:layout_marginLeft="15dp"/>
+            android:layout_marginStart="15dp"/>
 
     <LinearLayout
             android:id="@+id/LinearLayout02"
@@ -72,7 +74,8 @@
                 android:onClick="onCancelPressed"
                 tools:text="Cancel" android:textColor="@color/reddish"
                 android:textSize="16sp" android:layout_weight="0.50"
-                android:paddingLeft="10dp" android:paddingRight="5dp">
+                android:paddingStart="10dp"
+                android:paddingEnd="10sp">
         </Button>
         <Button
                 android:text="@string/submit"
@@ -83,8 +86,9 @@
                 android:textColor="@android:color/holo_green_light"
                 tools:text="Submit" android:textSize="16sp"
                 android:layout_weight="0.48"
-                android:layout_width="wrap_content" android:paddingRight="10dp"
-                android:paddingLeft="5dp">
+                android:layout_width="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingEnd="10sp">
         </Button>
     </LinearLayout>
 

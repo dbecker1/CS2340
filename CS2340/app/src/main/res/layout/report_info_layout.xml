@@ -56,15 +56,13 @@
             android:text="@string/submitted"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView12"
-            android:layout_weight="0.94" />
+            android:id="@+id/textView12"/>
 
         <TextView
             android:text=""
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/submittedBy"
-            android:layout_weight="1" />
+            android:id="@+id/submittedBy"/>
 
     </LinearLayout>
 
@@ -78,15 +76,13 @@
             android:text="@string/report_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView19"
-            android:layout_weight="1" />
+            android:id="@+id/textView19"/>
 
         <TextView
             android:text=""
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/reportType"
-            android:layout_weight="1" />
+            android:id="@+id/reportType"/>
     </LinearLayout>
 
 </LinearLayout>
