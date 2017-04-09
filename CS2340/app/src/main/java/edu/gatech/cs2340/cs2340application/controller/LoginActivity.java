@@ -14,6 +14,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import edu.gatech.cs2340.cs2340application.R;
 
 public class LoginActivity extends AppCompatActivity {
@@ -22,6 +25,10 @@ public class LoginActivity extends AppCompatActivity {
     private TextView errorView;
     private EditText username;
     private EditText password;
+
+    private static final String EMAIL_PATTERN =
+            "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                    + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,26 +52,38 @@ public class LoginActivity extends AppCompatActivity {
      */
 
     protected void onSubmitPressed(View view) {
-        if (!username.getText().toString().equals("") && !password.getText().toString().equals("")){
-            String email = username.getText().toString();
-            String pwd = password.getText().toString();
-            mAuth.signInWithEmailAndPassword(email, pwd)
-                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
+        LoginProviderInterface provider = new FirebaseLogin();
+        login(username.getText().toString(), password.getText().toString(), provider, new LoginResultInterface() {
+            @Override
+            public void success() {
+                Intent next = new Intent(LoginActivity.this, HomeScreenActivity.class);
+                startActivity(next);
+                finish();
+            }
 
-                            if (!task.isSuccessful()) {
-                                errorView.setText("Error: Invalid username or password");
-                            } else {
-                                Intent next = new Intent(LoginActivity.this, HomeScreenActivity.class);
-                                startActivity(next);
-                                finish();
-                            }
-                        }
-                    });
-        } else {
-            errorView.setText("Error: Please enter a username and password");
+            @Override
+            public void failure(String failureMessage) {
+                errorView.setText(failureMessage);
+            }
+        });
+    }
+
+    public void login(String username, String password, LoginProviderInterface provider, LoginResultInterface handler) {
+        if (username.length() == 0) {
+            handler.failure("Username cannot be empty.");
+            return;
         }
+        if (password.length() == 0) {
+            handler.failure("Password cannot be empty.");
+            return;
+        }
+        Pattern pattern = Pattern.compile(EMAIL_PATTERN);
+        Matcher matcher = pattern.matcher(username);
+        if (!matcher.matches()) {
+            handler.failure("Username must be valid email.");
+            return;
+        }
+        provider.login(username, password, handler);
     }
 
     /**
