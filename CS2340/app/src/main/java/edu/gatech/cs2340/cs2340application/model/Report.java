@@ -6,7 +6,10 @@ import com.google.firebase.database.Exclude;
 import java.util.Date;
 
 /**
- * Created by dbeckerfl on 2/27/17.
+ * Report class containing all the of a report
+ *
+ * @version 1.0
+ * @author Daniel Becker
  */
 
 public class Report {

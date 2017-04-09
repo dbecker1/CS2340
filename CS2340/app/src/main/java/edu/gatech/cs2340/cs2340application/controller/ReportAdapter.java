@@ -14,7 +14,10 @@ import edu.gatech.cs2340.cs2340application.model.PurityReport;
 import edu.gatech.cs2340.cs2340application.model.Report;
 
 /**
- * Created by dbeckerfl on 2/27/17.
+ * Displaying reports
+ *
+ * @version 1.0
+ * @author Daniel Becker
  */
 
 public class ReportAdapter extends BaseAdapter {

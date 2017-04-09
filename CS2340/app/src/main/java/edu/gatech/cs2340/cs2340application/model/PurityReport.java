@@ -1,9 +1,10 @@
 package edu.gatech.cs2340.cs2340application.model;
 
-import edu.gatech.cs2340.cs2340application.model.Report;
 
 /**
- * Created by dbeckerfl on 2/27/17.
+ *
+ * @version 1.0
+ * @author Daniel Becker
  */
 
 public class PurityReport extends Report {

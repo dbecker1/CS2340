@@ -10,7 +10,11 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Created by bzhang345 on 2/20/17. Modified for email verification by Cliff P.
+ * Created by Bryan Zhang and modified for email verification by Cliff Panos
+ *
+ * @version 1.0
+ * @author Bryan Zhang
+ * @author Cliff Panos
  */
 
 public class User {

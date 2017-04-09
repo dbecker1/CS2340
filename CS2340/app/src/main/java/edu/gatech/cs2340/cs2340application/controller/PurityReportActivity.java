@@ -100,4 +100,6 @@ public class PurityReportActivity extends AppCompatActivity {
         startActivity(next);
         finish();
     }
+
+
 }

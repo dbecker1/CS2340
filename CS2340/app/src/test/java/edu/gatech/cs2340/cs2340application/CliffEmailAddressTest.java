@@ -1,3 +1,5 @@
+package edu.gatech.cs2340.cs2340application;
+
 import edu.gatech.cs2340.cs2340application.model.User;
 
 import org.junit.Before;
@@ -14,7 +16,7 @@ import static org.junit.Assert.*;
 public class CliffEmailAddressTest {
 
     private static User user;
-    public static final int TIMEOUT = 500;
+    private static final int TIMEOUT = 500;
 
     @Before
     public void setup() {

@@ -1,7 +1,10 @@
 package edu.gatech.cs2340.cs2340application.controller;
 
-/**
- * Created by dbeckerfl on 3/27/17.
+/*
+ * Creating and displaying data points on history report graph
+ *
+ * @version 1.0
+ * @author Daniel Becker
  */
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

@@ -4,7 +4,9 @@ import edu.gatech.cs2340.cs2340application.controller.LoginProviderInterface;
 import edu.gatech.cs2340.cs2340application.controller.LoginResultInterface;
 
 /**
- * Created by dbeckerfl on 4/8/17.
+ *
+ * @version 1.0
+ * @author Daniel Becker
  */
 
 public class MockLoginProvider implements LoginProviderInterface {

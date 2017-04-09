@@ -8,7 +8,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 /**
- * Created by dbeckerfl on 4/8/17.
+ * Handled log in using Firebase
+ *
+ * @version 1.0
+ * @author Daniel Becker
  */
 
 public class FirebaseLogin implements LoginProviderInterface {

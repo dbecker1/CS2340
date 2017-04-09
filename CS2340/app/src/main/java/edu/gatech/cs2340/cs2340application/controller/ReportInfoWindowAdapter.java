@@ -15,7 +15,9 @@ import edu.gatech.cs2340.cs2340application.model.PurityReport;
 import edu.gatech.cs2340.cs2340application.model.Report;
 
 /**
- * Created by dbeckerfl on 3/5/17.
+ *
+ * @version 1.0
+ * @author Daniel Becker
  */
 
 public class ReportInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {

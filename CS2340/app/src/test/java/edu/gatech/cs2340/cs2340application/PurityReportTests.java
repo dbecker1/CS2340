@@ -6,8 +6,11 @@ import org.junit.Before;
 import edu.gatech.cs2340.cs2340application.model.PurityReport;
 
 import static org.junit.Assert.assertEquals;
+
 /**
- * Created by Adach on 4/5/2017.
+ *
+ * @version 1.0
+ * @author Anthony D'achille
  */
 
 public class PurityReportTests {
