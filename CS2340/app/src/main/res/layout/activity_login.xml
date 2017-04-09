@@ -87,30 +87,58 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/accountLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView2"
-        android:layout_weight="0.23" />
-
-    <TextView
-            android:text="Don't have an account? Register here!"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/accountLabel"
-            android:layout_weight="0.08"
-            android:textAlignment="center" android:textSize="17sp"
-            android:textColor="@color/darkGrey"/>
+        android:layout_weight="0.13"
+        android:text="Don't have an account? Register here!"
+        android:textAlignment="center"
+        android:textColor="@color/darkGrey"
+        android:textSize="17sp" />
 
     <Button
-            android:text="Register"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:id="@+id/Register"
-            android:textSize="16sp"
-            android:textAlignment="center"
-            android:onClick="onRegisterPressed" android:elevation="0dp"
-            android:textColor="@color/darkGrey" android:layout_weight="0.07"
-            android:paddingLeft="10dp" android:paddingRight="10dp"
-            android:layout_marginRight="10dp" android:layout_marginLeft="10dp"/>
+        android:id="@+id/Register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_weight="0.07"
+        android:elevation="0dp"
+        android:gravity="center"
+        android:onClick="onRegisterPressed"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="Register"
+        android:textAlignment="center"
+        android:textColor="@color/darkGrey"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/forgotPasswordLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.08"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Forgot your password? Restore it here!"
+        android:textAlignment="center"
+        android:textAppearance="@android:style/TextAppearance.Material.Widget.PopupMenu.Small" />
+
+
+    <Button
+        android:id="@+id/restorePasswordButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_weight="0.06"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:onClick="onRestorePressed"
+        android:text="Restore Password"
+        android:textAlignment="center"
+        android:textColor="@color/darkGrey"
+        android:textSize="16sp"
+        />
+
 </LinearLayout>

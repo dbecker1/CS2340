@@ -88,4 +88,9 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(registration);
     }
 
+    protected void onRestorePressed(View view) {
+        Intent restorePassword = new Intent(this, RestorePasswordActivity.class);
+        startActivity(restorePassword);
+    }
+
 }
