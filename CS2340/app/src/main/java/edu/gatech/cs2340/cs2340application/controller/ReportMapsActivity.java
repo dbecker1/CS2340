@@ -3,7 +3,6 @@ package edu.gatech.cs2340.cs2340application.controller;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
-import android.view.View;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -22,7 +21,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import edu.gatech.cs2340.cs2340application.R;
 import edu.gatech.cs2340.cs2340application.model.PurityReport;
@@ -33,8 +31,8 @@ import edu.gatech.cs2340.cs2340application.model.User;
 public class ReportMapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    private ArrayList<Marker> markers = new ArrayList<Marker>();
-    private ArrayList<Report> reports = new ArrayList<Report>();
+    private ArrayList<Marker> markers = new ArrayList<>();
+    private ArrayList<Report> reports = new ArrayList<>();
     private ReportInfoWindowAdapter mAdapter;
 
     @Override

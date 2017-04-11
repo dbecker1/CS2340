@@ -12,7 +12,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.Date;
 import java.text.SimpleDateFormat;
@@ -25,7 +24,7 @@ public class HistoricalReportService {
     public void getReportData(final boolean isVirus, final String location, final String year, final ReportDataInterface callback) {
         final LinkedList<Double>[] data = new LinkedList[12];
         for(int i = 0; i < 12; i++) {
-            data[i] = new LinkedList<Double>();
+            data[i] = new LinkedList<>();
         }
 
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference();

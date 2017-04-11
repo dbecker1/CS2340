@@ -3,9 +3,7 @@ package edu.gatech.cs2340.cs2340application.controller;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -16,8 +14,6 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-import javax.xml.transform.Source;
-
 import edu.gatech.cs2340.cs2340application.R;
 import edu.gatech.cs2340.cs2340application.model.PurityReport;
 import edu.gatech.cs2340.cs2340application.model.Report;
@@ -26,7 +22,7 @@ import edu.gatech.cs2340.cs2340application.model.User;
 
 public class ViewReportsActivity extends AppCompatActivity {
 
-    ArrayList<Report> reports = new ArrayList<Report>();
+    ArrayList<Report> reports = new ArrayList<>();
     ReportAdapter adapter;
 
     @Override

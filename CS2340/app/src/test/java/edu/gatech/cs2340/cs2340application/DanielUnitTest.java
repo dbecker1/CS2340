@@ -1,19 +1,12 @@
 package edu.gatech.cs2340.cs2340application;
 
-import android.test.mock.MockApplication;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import edu.gatech.cs2340.cs2340application.controller.HistoricalReportService;
 import edu.gatech.cs2340.cs2340application.controller.LoginActivity;
 import edu.gatech.cs2340.cs2340application.controller.LoginResultInterface;
-import edu.gatech.cs2340.cs2340application.controller.ReportDataInterface;
 
-import static java.security.AccessController.getContext;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
 /**
  * Example local unit test, which will execute on the development machine (host).

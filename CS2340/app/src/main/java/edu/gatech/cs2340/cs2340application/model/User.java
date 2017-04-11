@@ -1,10 +1,5 @@
 package edu.gatech.cs2340.cs2340application.model;
 
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-
-import edu.gatech.cs2340.cs2340application.R;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
