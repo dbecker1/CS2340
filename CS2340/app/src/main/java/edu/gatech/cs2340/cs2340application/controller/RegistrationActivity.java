@@ -64,7 +64,7 @@ public class RegistrationActivity extends AppCompatActivity {
      *
      * @param view The current screen of the Registration Screen from activity_registration.xml
      */
-    protected void onCancelPressed(View view) {
+    public void onCancelPressed(View view) {
         onBackPressed();
     }
 
@@ -76,7 +76,7 @@ public class RegistrationActivity extends AppCompatActivity {
      *
      * @param view The current screen of the Registration Screen from activity_registration.xml
      */
-    protected void onRegisterPressed(View view) {
+    public void onRegisterPressed(View view) {
         int typeOfError = checkValidInputs();
         if (typeOfError == 0) {
             mAuth.createUserWithEmailAndPassword(name.getText().toString(), password.getText().toString())
@@ -172,10 +172,10 @@ public class RegistrationActivity extends AppCompatActivity {
         if (name.equals("")) {
             return 1;
         }
-        if (!password.equals(confirmPassword.toString())
+        if (!password.equals(confirmPassword)
                 && !password.equals("")) {
             return 2;
-        } else if (password.toString().equals("")) {
+        } else if (password.equals("")) {
             return 3;
         }
         if (id.equals("")) {

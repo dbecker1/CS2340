@@ -15,7 +15,7 @@ import edu.gatech.cs2340.cs2340application.controller.LoginResultInterface;
  */
 public class DanielUnitTest {
 
-    MockLoginProvider provider;
+    private MockLoginProvider provider;
 
     @Before
     public void setUp() {

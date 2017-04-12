@@ -42,7 +42,7 @@ public class SourceReportActivity extends AppCompatActivity {
      *
      * @param view The current screen of the Source Report Screen from activity_sourcereport.xml
      */
-    protected void onSavePressed(View view) {
+    public void onSavePressed(View view) {
         int typeId = waterType.getCheckedRadioButtonId();
         RadioButton typeButton = (RadioButton) waterType.findViewById(typeId);
         String waterTypeString = typeButton.getText().toString();
@@ -87,7 +87,7 @@ public class SourceReportActivity extends AppCompatActivity {
      *
      * @param view The current screen of the Source Report Screen from activity_sourcereport.xml
      */
-    protected void onCancelPressed(View view){
+    public void onCancelPressed(View view){
         Intent next = new Intent(SourceReportActivity.this, HomeScreenActivity.class);
         startActivity(next);
         finish();

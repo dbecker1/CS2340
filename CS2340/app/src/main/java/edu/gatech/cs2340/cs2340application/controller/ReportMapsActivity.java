@@ -31,9 +31,8 @@ import edu.gatech.cs2340.cs2340application.model.User;
 public class ReportMapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    private ArrayList<Marker> markers = new ArrayList<>();
-    private ArrayList<Report> reports = new ArrayList<>();
-    private ReportInfoWindowAdapter mAdapter;
+    private final ArrayList<Marker> markers = new ArrayList<>();
+    private final ArrayList<Report> reports = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +60,7 @@ public class ReportMapsActivity extends FragmentActivity implements OnMapReadyCa
 
         final DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
 
-        mAdapter = new ReportInfoWindowAdapter(this, reports);
+        ReportInfoWindowAdapter mAdapter = new ReportInfoWindowAdapter(this, reports);
 
         mMap.setInfoWindowAdapter(mAdapter);
 

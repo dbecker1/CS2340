@@ -105,7 +105,8 @@
                 android:id="@+id/cancelButton"
                 android:onClick="onCancelPressed"
                 android:textColor="@color/reddish"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="20dp"
+                style="?android:attr/buttonBarButtonStyle">
         </Button>
         <Button
                 android:text="@string/save"
@@ -114,7 +115,8 @@
                 android:id="@+id/saveButton"
                 android:onClick="onSavePressed"
                 android:textColor="@android:color/holo_green_light"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="20dp"
+                style="?android:attr/buttonBarButtonStyle">
         </Button>
     </LinearLayout>
 

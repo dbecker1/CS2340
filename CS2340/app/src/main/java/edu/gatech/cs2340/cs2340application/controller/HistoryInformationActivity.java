@@ -39,7 +39,7 @@ public class HistoryInformationActivity extends AppCompatActivity {
      * @param view The current screen of the Login Screen from activity_login.xml
      */
 
-    protected void onSubmitPressed(View view) {
+    public void onSubmitPressed(View view) {
         Intent reportScreen = new Intent(this, HistoricalReportsActivity.class);
 
 
@@ -80,7 +80,7 @@ public class HistoryInformationActivity extends AppCompatActivity {
      * @param view The current view of Login Screen from activity_login.xml
      */
 
-    protected void onCancelPressed(View view) {
+    public void onCancelPressed(View view) {
         onBackPressed();
     }
 

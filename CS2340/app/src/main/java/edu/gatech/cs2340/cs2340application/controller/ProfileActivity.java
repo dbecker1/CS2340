@@ -38,7 +38,7 @@ public class ProfileActivity extends AppCompatActivity {
         userType.check(R.id.userRadioButton);
 
         FirebaseAuth auth = FirebaseAuth.getInstance();
-        String userID = new String();
+        String userID = "";
         try {
              userID = auth.getCurrentUser().getUid();
 
@@ -54,7 +54,7 @@ public class ProfileActivity extends AppCompatActivity {
                 existingProfile = dataSnapshot.getValue(User.class);
                 email.setText(existingProfile.getEmailAddress());
                 address.setText(existingProfile.getAddress());
-                int radioButton = -1;
+                int radioButton;
                 switch(existingProfile.getUserType()) {
                     case "User":
                         radioButton = R.id.userRadioButton;
@@ -104,7 +104,7 @@ public class ProfileActivity extends AppCompatActivity {
      *
      * @param view The current screen of the Login Screen from activity_profile.xml
      */
-    protected void onSavePressed(View view) {
+    public void onSavePressed(View view) {
         int radioId = userType.getCheckedRadioButtonId();
         RadioButton radioButton = (RadioButton) userType.findViewById(radioId);
         String userTypeString = radioButton.getText().toString();
@@ -112,7 +112,7 @@ public class ProfileActivity extends AppCompatActivity {
         User user = new User(email.getText().toString(), userTypeString, address.getText().toString());
 
         FirebaseAuth auth = FirebaseAuth.getInstance();
-        String userID = new String();
+        String userID = "";
         try {
             userID = auth.getCurrentUser().getUid();
 
@@ -135,7 +135,7 @@ public class ProfileActivity extends AppCompatActivity {
      *
      * @param view The current screen of the Login Screen from activity_profile.xml
      */
-    protected void onCancelPressed(View view) {
+    public void onCancelPressed(View view) {
         Intent next = new Intent(ProfileActivity.this, HomeScreenActivity.class);
         startActivity(next);
         finish();

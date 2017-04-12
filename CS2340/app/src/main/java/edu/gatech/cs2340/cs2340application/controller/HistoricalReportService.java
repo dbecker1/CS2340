@@ -12,6 +12,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.Date;
 import java.text.SimpleDateFormat;
@@ -35,7 +36,7 @@ class HistoricalReportService {
                 int yearInt = Integer.parseInt(year);
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
                     PurityReport report = postSnapshot.getValue(PurityReport.class);
-                    Double entry = 0.0;
+                    Double entry; // = 0.0?
 
                     String yearString = report.getDateTimeString().substring(report.getDateTimeString().length() - 4);
                     int selectedYear = Integer.parseInt(yearString);
@@ -52,7 +53,10 @@ class HistoricalReportService {
 
                             SimpleDateFormat sdf = new SimpleDateFormat("EEE MMM dd hh:mm:ss zzz yyyy", new Locale("US"));
                             Date date = sdf.parse(report.getDateTimeString());
-                            data[date.getMonth()].add(entry);
+                            Calendar cal = Calendar.getInstance();
+                            cal.setTime(date);
+                            int month = cal.get(Calendar.MONTH);
+                            data[month].add(entry);
 
                         } catch (java.text.ParseException e) {
                             e.printStackTrace();

@@ -28,7 +28,7 @@ public class HomeScreenActivity extends AppCompatActivity {
 
         submitPurity = (Button)findViewById(R.id.purity);
         historicalReport = (Button)findViewById(R.id.historical_report);
-        String uid = new String();
+        String uid = "";
 
         try {
             uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
@@ -64,7 +64,7 @@ public class HomeScreenActivity extends AppCompatActivity {
      *
      * @param view The current screen of Home Screen from activity_homescreen.xml
      */
-    protected void onLogoutPressed(View view) {
+    public void onLogoutPressed(View view) {
         FirebaseAuth auth = FirebaseAuth.getInstance();
         auth.signOut();
 
@@ -78,7 +78,7 @@ public class HomeScreenActivity extends AppCompatActivity {
      *
      * @param view The current screen of the Home Screen from activity_homescreen.xml
      */
-    protected void onProfilePressed(View view) {
+    public void onProfilePressed(View view) {
         Intent welcome = new Intent(this, ProfileActivity.class);
         startActivity(welcome);
         finish();
@@ -90,7 +90,7 @@ public class HomeScreenActivity extends AppCompatActivity {
      *
      * @param view The current screen of the Home Screen from activity_homescreen.xml
      */
-    protected void purityReport(View view) {
+    public void purityReport(View view) {
         Intent welcome = new Intent(this, PurityReportActivity.class);
         startActivity(welcome);
         finish();
@@ -102,7 +102,7 @@ public class HomeScreenActivity extends AppCompatActivity {
      *
      * @param view The current screen of the Home Screen from activity_homescreen.xml
      */
-    protected void sourceReport(View view) {
+    public void sourceReport(View view) {
         Intent welcome = new Intent(this, SourceReportActivity.class);
         startActivity(welcome);
         finish();
@@ -114,19 +114,19 @@ public class HomeScreenActivity extends AppCompatActivity {
      *
      * @param view The current screen of the Home Screen from activity_homescreen.xml
      */
-    protected void onViewReportsClicked(View view) {
+    public void onViewReportsClicked(View view) {
         Intent welcome = new Intent(this, ViewReportsActivity.class);
         startActivity(welcome);
         finish();
     }
 
-    protected void onAvailabilityClicked(View view) {
+    public void onAvailabilityClicked(View view) {
         Intent availability = new Intent(this, ReportMapsActivity.class);
         startActivity(availability);
         finish();
     }
 
-    protected void onHistoricalReportClicked(View view) {
+    public void onHistoricalReportClicked(View view) {
         Intent historical = new Intent(this, HistoryInformationActivity.class);
         startActivity(historical);
         finish();

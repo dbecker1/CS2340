@@ -22,7 +22,7 @@ import edu.gatech.cs2340.cs2340application.model.User;
 
 public class ViewReportsActivity extends AppCompatActivity {
 
-    private ArrayList<Report> reports = new ArrayList<>();
+    private final ArrayList<Report> reports = new ArrayList<>();
     private ReportAdapter adapter;
 
     @Override

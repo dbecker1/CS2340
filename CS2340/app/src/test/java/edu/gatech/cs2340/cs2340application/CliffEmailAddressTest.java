@@ -76,10 +76,10 @@ public class CliffEmailAddressTest {
     @Test(timeout = TIMEOUT)
     public void testMisplacedAtSymbols() {
 
-        String[] misplacedAtSymolEmails = {"@cliffpanosGmail.com",
+        String[] misplacedAtSymbolEmails = {"@cliffpanosGmail.com",
                 "wepp@y@yahoo@y.com", "clifpanos@gmail.com@",
                 "kathyTran.gmail.com@", "123@@w3schools.com"};
-        for (String email : misplacedAtSymolEmails) {
+        for (String email : misplacedAtSymbolEmails) {
             assertFalse(user.setEmailAddress(email));
         }
 

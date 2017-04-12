@@ -31,7 +31,7 @@ public class WelcomeActivity extends AppCompatActivity {
      *
      * @param view The current screen of the Welcome Screen from activity_welcome.xml
      */
-    protected void onLoginPressed(View view) {
+    public void onLoginPressed(View view) {
 
         Intent login = new Intent(this, LoginActivity.class);
         startActivity(login);
@@ -43,7 +43,7 @@ public class WelcomeActivity extends AppCompatActivity {
      *
      * @param view The current screen of the Welcome Screen from activity_welcome.xml
      */
-    protected void onRegisterPressed(View view) {
+    public void onRegisterPressed(View view) {
         Intent register = new Intent(this, RegistrationActivity.class);
         startActivity(register);
     }

@@ -45,7 +45,7 @@ public class PurityReportActivity extends AppCompatActivity {
      *
      * @param view The current screen of the Purity Report Screen from activity_purity_report.xml
      */
-    protected void onSavePressed(View view) {
+    public void onSavePressed(View view) {
         int conditionID = condition.getCheckedRadioButtonId();
         RadioButton conditionButton = (RadioButton) condition.findViewById(conditionID);
         String conditionString = conditionButton.getText().toString();
@@ -90,7 +90,7 @@ public class PurityReportActivity extends AppCompatActivity {
      *
      * @param view The current screen of the Home Screen from activity_homescreen.xml
      */
-    protected void onCancelPressed(View view){
+    public void onCancelPressed(View view){
         Intent next = new Intent(PurityReportActivity.this, HomeScreenActivity.class);
         startActivity(next);
         finish();

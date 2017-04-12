@@ -22,8 +22,8 @@ import edu.gatech.cs2340.cs2340application.model.Report;
 
 class ReportInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
 
-    private Context mContext;
-    private ArrayList<Report> mDataSource;
+    private final Context mContext;
+    private final ArrayList<Report> mDataSource;
 
     /**
      * Generates the data source for the map.

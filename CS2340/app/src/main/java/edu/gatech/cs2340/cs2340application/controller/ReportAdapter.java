@@ -22,8 +22,8 @@ import edu.gatech.cs2340.cs2340application.model.Report;
 
 class ReportAdapter extends BaseAdapter {
 
-    private LayoutInflater mInflater;
-    private ArrayList<Report> mDataSource;
+    private final LayoutInflater mInflater;
+    private final ArrayList<Report> mDataSource;
 
     /**
      * Generates the data source for the list view.
@@ -58,7 +58,10 @@ class ReportAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // Get view for row item
-        View rowView = mInflater.inflate(R.layout.report_info_layout, parent, false);
+        View rowView = convertView;
+        if (rowView == null) {
+            rowView = mInflater.inflate(R.layout.report_info_layout, parent, false);
+        }
 
         Report report = mDataSource.get(position);
 

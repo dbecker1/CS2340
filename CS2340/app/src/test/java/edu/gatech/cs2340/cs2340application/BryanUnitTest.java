@@ -1,16 +1,12 @@
 package edu.gatech.cs2340.cs2340application;
 
 
-import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 import edu.gatech.cs2340.cs2340application.controller.RegistrationActivity;
 
 
-import static java.security.AccessController.getContext;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
 /**
  * JUnit test testing registration activity input
@@ -21,10 +17,7 @@ import static org.junit.Assert.assertNotNull;
 
 public class BryanUnitTest {
 
-    @Before
-    public void setUp() {
 
-    }
 
     @Test
     public void testUsername() {
