@@ -8,7 +8,6 @@
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginTop="14dp"
-        android:layout_weight="1"
         android:text="@string/enter_information"
         android:textIsSelectable="true"
         android:gravity="center"
@@ -41,9 +40,6 @@
             android:id="@+id/virusButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/contaminantButton"
-            android:layout_alignBottom="@+id/contaminantButton"
-            android:layout_alignEnd="@+id/submitButton"
             android:layout_marginEnd="42dp"
             android:layout_weight="1"
             android:text="@string/virus"/>
@@ -52,8 +48,6 @@
             android:id="@+id/contaminantButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/cancelButton"
-            android:layout_alignStart="@+id/year"
             android:layout_marginBottom="44dp"
             android:layout_weight="1"
             android:text="@string/contaminant" />

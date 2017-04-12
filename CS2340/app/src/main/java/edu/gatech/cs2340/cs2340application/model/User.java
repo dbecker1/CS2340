@@ -14,9 +14,9 @@ import java.util.regex.Pattern;
 
 public class User {
 
-    protected String emailAddress;
-    protected String userType;
-    protected String address;
+    private String emailAddress;
+    private String userType;
+    private String address;
     private static final String EMAIL_PATTERN =
             "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
                     + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";

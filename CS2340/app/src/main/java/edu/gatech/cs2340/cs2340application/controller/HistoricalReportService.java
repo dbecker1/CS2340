@@ -19,9 +19,9 @@ import java.util.Locale;
 
 import edu.gatech.cs2340.cs2340application.model.PurityReport;
 
-public class HistoricalReportService {
+class HistoricalReportService {
 
-    public void getReportData(final boolean isVirus, final String location, final String year, final ReportDataInterface callback) {
+    void getReportData(final boolean isVirus, final String location, final String year, final ReportDataInterface callback) {
         final LinkedList<Double>[] data = new LinkedList[12];
         for(int i = 0; i < 12; i++) {
             data[i] = new LinkedList<>();
@@ -39,8 +39,6 @@ public class HistoricalReportService {
 
                     String yearString = report.getDateTimeString().substring(report.getDateTimeString().length() - 4);
                     int selectedYear = Integer.parseInt(yearString);
-
-
 
 
                     if (selectedYear == yearInt && report.getLocation().equals(location)) {

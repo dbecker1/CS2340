@@ -22,8 +22,8 @@ import edu.gatech.cs2340.cs2340application.model.User;
 
 public class ViewReportsActivity extends AppCompatActivity {
 
-    ArrayList<Report> reports = new ArrayList<>();
-    ReportAdapter adapter;
+    private ArrayList<Report> reports = new ArrayList<>();
+    private ReportAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,37 +54,40 @@ public class ViewReportsActivity extends AppCompatActivity {
             }
         });
 
+        try {
+            ref.child("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                    .addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            User user = dataSnapshot.getValue(User.class);
+                            if(user.getUserType().equals("Worker") || user.getUserType().equals("Manager")) {
+                                ref.child("purityReports").addValueEventListener(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                                            PurityReport report = postSnapshot.getValue(PurityReport.class);
+                                            reports.add(report);
+                                        }
+                                        adapter.notifyDataSetChanged();
+                                    }
 
-
-        ref.child("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-            .addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    User user = dataSnapshot.getValue(User.class);
-                    if(user.getUserType().equals("Worker") || user.getUserType().equals("Manager")) {
-                        ref.child("purityReports").addValueEventListener(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(DataSnapshot dataSnapshot) {
-                                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
-                                    PurityReport report = postSnapshot.getValue(PurityReport.class);
-                                    reports.add(report);
-                                }
-                                adapter.notifyDataSetChanged();
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        System.out.println("database error");
+                                    }
+                                });
                             }
+                        }
 
-                            @Override
-                            public void onCancelled(DatabaseError databaseError) {
-                                System.out.println("database error");
-                            }
-                        });
-                    }
-                }
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
 
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
+                        }
+                    });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-                }
-            });
 
     }
 

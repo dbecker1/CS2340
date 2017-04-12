@@ -55,7 +55,12 @@ public class SourceReportActivity extends AppCompatActivity {
 
         SourceReport report = new SourceReport();
         report.setDateTimeString(new Date().toString());
-        report.setUserId(auth.getCurrentUser().getEmail());
+        try {
+            report.setUserId(auth.getCurrentUser().getEmail());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         report.setReportNumber(UUID.randomUUID().toString());
         report.setCondition(conditionString);
         report.setType(waterTypeString);

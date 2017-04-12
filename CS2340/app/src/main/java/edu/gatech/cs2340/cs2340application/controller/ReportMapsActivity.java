@@ -81,35 +81,45 @@ public class ReportMapsActivity extends FragmentActivity implements OnMapReadyCa
             }
         });
 
-        ref.child("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                .addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                User user = dataSnapshot.getValue(User.class);
-                if(user.getUserType().equals("Worker") || user.getUserType().equals("Manager")) {
-                    ref.child("purityReports").addValueEventListener(new ValueEventListener() {
+        try {
+            ref.child("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                    .addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
-                            for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
-                                PurityReport report = postSnapshot.getValue(PurityReport.class);
-                                reports.add(report);
-                                addMapMarker(report);
+                            User user = dataSnapshot.getValue(User.class);
+                            if(user.getUserType().equals("Worker")
+                                    || user.getUserType().equals("Manager")) {
+                                ref.child("purityReports").addValueEventListener(
+                                        new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        for (DataSnapshot postSnapshot: dataSnapshot
+                                                .getChildren()) {
+                                            PurityReport report = postSnapshot.getValue(
+                                                    PurityReport.class);
+                                            reports.add(report);
+                                            addMapMarker(report);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        System.out.println("database error");
+                                    }
+                                });
                             }
                         }
 
                         @Override
                         public void onCancelled(DatabaseError databaseError) {
-                            System.out.println("database error");
+
                         }
                     });
-                }
-            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
 
-            }
-        });
 
 
     }

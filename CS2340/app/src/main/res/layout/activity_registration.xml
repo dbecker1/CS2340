@@ -139,7 +139,6 @@
             android:id="@+id/LinearLayout0"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:layout_alignParentBottom="true"
             android:orientation="horizontal" android:paddingRight="10dp"
             android:paddingLeft="10dp">
         <Button

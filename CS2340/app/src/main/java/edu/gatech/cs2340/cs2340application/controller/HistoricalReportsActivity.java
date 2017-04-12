@@ -1,6 +1,7 @@
 package edu.gatech.cs2340.cs2340application.controller;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -21,7 +22,6 @@ import edu.gatech.cs2340.cs2340application.R;
 public class HistoricalReportsActivity extends AppCompatActivity {
 
     private boolean isVirus;
-    private XYPlot plot;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +31,12 @@ public class HistoricalReportsActivity extends AppCompatActivity {
         String location = getIntent().getExtras().getString("location");
         String year = getIntent().getExtras().getString("year");
         String type = getIntent().getExtras().getString("typeOfContaminant");
-        isVirus = type.equals("virus");
+        try {
+            isVirus = type.equals("virus");
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+
         //String location = "33.77,-84.3963";
 
         HistoricalReportService service = new HistoricalReportService();
@@ -45,9 +50,9 @@ public class HistoricalReportsActivity extends AppCompatActivity {
 
     }
 
-    protected void createGraph(Number[] data) {
+    private void createGraph(Number[] data) {
         // initialize our XYPlot reference:
-        plot = (XYPlot) findViewById(R.id.plot);
+        XYPlot plot = (XYPlot) findViewById(R.id.plot);
 
         // create a couple arrays of y-values to plot:
 
@@ -87,13 +92,14 @@ public class HistoricalReportsActivity extends AppCompatActivity {
         plot.redraw();
 
         plot.getGraph().getLineLabelStyle(XYGraphWidget.Edge.BOTTOM).setFormat(new Format() {
+
             @Override
-            public StringBuffer format(Object obj, StringBuffer toAppendTo, FieldPosition pos) {
+            public StringBuffer format(Object obj, @NonNull StringBuffer toAppendTo, @NonNull FieldPosition pos) {
                 int i = Math.round(((Number) obj).floatValue());
                 return toAppendTo.append(domainLabels[i]);
             }
             @Override
-            public Object parseObject(String source, ParsePosition pos) {
+            public Object parseObject(String source, @NonNull ParsePosition pos) {
                 return null;
             }
         });

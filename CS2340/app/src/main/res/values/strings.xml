@@ -27,7 +27,7 @@
     <string name="user_type">User Type</string>
     <string name="user">User</string>
     <string name="worker">Worker</string>
-    <string name="manager">Worker</string>
+    <string name="manager">Manager</string>
     <string name="admin">Admin</string>
     <string name="save">Save</string>
     <string name="location">Location</string>

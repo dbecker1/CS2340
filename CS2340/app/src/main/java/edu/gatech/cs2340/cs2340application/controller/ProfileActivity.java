@@ -15,8 +15,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.HashMap;
-
 import edu.gatech.cs2340.cs2340application.R;
 import edu.gatech.cs2340.cs2340application.model.User;
 
@@ -40,13 +38,19 @@ public class ProfileActivity extends AppCompatActivity {
         userType.check(R.id.userRadioButton);
 
         FirebaseAuth auth = FirebaseAuth.getInstance();
-        String userID = auth.getCurrentUser().getUid();
+        String userID = new String();
+        try {
+             userID = auth.getCurrentUser().getUid();
+
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
         //User existingProfile = (User) database.child("users").child(userID)
 
         database.child("users").orderByChild(userID).limitToFirst(1).addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey) {
-                HashMap<String, String> userMap =  (HashMap<String, String>)dataSnapshot.getValue();
+                //HashMap<String, String> userMap =  (HashMap<String, String>)dataSnapshot.getValue();
                 existingProfile = dataSnapshot.getValue(User.class);
                 email.setText(existingProfile.getEmailAddress());
                 address.setText(existingProfile.getAddress());
@@ -108,7 +112,14 @@ public class ProfileActivity extends AppCompatActivity {
         User user = new User(email.getText().toString(), userTypeString, address.getText().toString());
 
         FirebaseAuth auth = FirebaseAuth.getInstance();
-        String userID = auth.getCurrentUser().getUid();
+        String userID = new String();
+        try {
+            userID = auth.getCurrentUser().getUid();
+
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+
         if (existingProfile != null) {
             auth.getCurrentUser().updateEmail(user.getEmailAddress());
         }

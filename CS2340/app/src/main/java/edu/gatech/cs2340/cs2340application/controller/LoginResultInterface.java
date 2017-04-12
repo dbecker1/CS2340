@@ -7,6 +7,6 @@ package edu.gatech.cs2340.cs2340application.controller;
  */
 
 public interface LoginResultInterface {
-    public void success();
-    public void failure(String failureMessage);
+    void success();
+    void failure(String failureMessage);
 }

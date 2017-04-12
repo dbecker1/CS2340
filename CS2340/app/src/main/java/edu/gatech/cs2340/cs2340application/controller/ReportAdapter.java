@@ -20,9 +20,8 @@ import edu.gatech.cs2340.cs2340application.model.Report;
  * @author Daniel Becker
  */
 
-public class ReportAdapter extends BaseAdapter {
+class ReportAdapter extends BaseAdapter {
 
-    private Context mContext;
     private LayoutInflater mInflater;
     private ArrayList<Report> mDataSource;
 
@@ -30,12 +29,11 @@ public class ReportAdapter extends BaseAdapter {
      * Generates the data source for the list view.
      *
      * @param context The current state of the application 
-     * @param items ArrayList containing all the reports submited
+     * @param items ArrayList containing all the reports submitted
      */
-    public ReportAdapter(Context context, ArrayList<Report> items) {
-        mContext = context;
+     ReportAdapter(Context context, ArrayList<Report> items) {
         mDataSource = items;
-        mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     //1

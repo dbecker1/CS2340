@@ -141,11 +141,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/cancelButton"
-            android:layout_above="@+id/LinearLayout02"
-            android:layout_alignEnd="@+id/typeOfWater"
             android:layout_weight="0.48"
             android:textColor="@color/reddish"
-            android:onClick="onCancelPressed">
+            android:onClick= "onCancelPressed">
         </Button>
 
         <Button
@@ -153,8 +151,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/saveButton"
-            android:layout_above="@+id/LinearLayout02"
-            android:layout_toEndOf="@+id/otherWaterType"
             android:layout_marginBottom="13dp"
             android:layout_weight="0.51"
             android:textAlignment="center"

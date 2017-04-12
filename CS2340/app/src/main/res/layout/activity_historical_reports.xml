@@ -1,47 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:ap="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/activity_historical_reports"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        tools:context="edu.gatech.cs2340.cs2340application.controller.HistoricalReportsActivity">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                  xmlns:tools="http://schemas.android.com/tools"
-                  android:orientation="vertical" android:layout_width="match_parent"
-                  android:layout_height="match_parent" android:weightSum="1"
-                  android:paddingLeft="15dp" android:paddingRight="15dp">
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ap="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_historical_reports"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:weightSum="1"
+    tools:context="edu.gatech.cs2340.cs2340application.controller.HistoricalReportsActivity">
 
-        <TextView
-                android:text="@string/historical_report"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:id="@+id/textView13" tools:text="Historical Report"
-                android:textAlignment="center"
-                android:textSize="25sp"
-                android:textColor="@color/cast_libraries_material_featurehighlight_outer_highlight_default_color"/>
 
-        <com.androidplot.xy.XYPlot
-                style="@style/APDefacto.Light"
-                android:id="@+id/plot"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+    <TextView
+            android:text="@string/historical_report"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/textView13" tools:text="Historical Report"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:textColor="@color/cast_libraries_material_featurehighlight_outer_highlight_default_color"/>
 
-                ap:rangeTitle="Particle Density (PPM)"
-                ap:domainTitle="Date (Month)"
-                ap:lineLabels="left|bottom"
-                ap:lineLabelRotationBottom="-45"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentTop="true"/>
+    <com.androidplot.xy.XYPlot
+            style="@style/APDefacto.Light"
+            android:id="@+id/plot"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
 
-    </LinearLayout>
+            ap:rangeTitle="Particle Density (PPM)"
+            ap:domainTitle="Date (Month)"
+            ap:lineLabels="left|bottom"
+            ap:lineLabelRotationBottom="-45"/>
 
-</RelativeLayout>
+</LinearLayout>
+

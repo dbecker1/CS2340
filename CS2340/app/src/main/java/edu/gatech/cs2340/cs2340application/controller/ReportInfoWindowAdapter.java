@@ -1,7 +1,7 @@
 package edu.gatech.cs2340.cs2340application.controller;
 
 import android.content.Context;
-import android.view.LayoutInflater;
+//import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
@@ -20,10 +20,9 @@ import edu.gatech.cs2340.cs2340application.model.Report;
  * @author Daniel Becker
  */
 
-public class ReportInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
+class ReportInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
 
     private Context mContext;
-    private LayoutInflater mInflater;
     private ArrayList<Report> mDataSource;
 
     /**
@@ -32,10 +31,10 @@ public class ReportInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
      * @param context the state of the application
      * @param items the array list of reports that is to be represented on the map.
      */
-    public ReportInfoWindowAdapter(Context context, ArrayList<Report> items) {
+    ReportInfoWindowAdapter(Context context, ArrayList<Report> items) {
         mContext = context;
         mDataSource = items;
-        mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        //LayoutInflater mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
     @Override
     public View getInfoWindow(Marker marker) {
@@ -49,7 +48,12 @@ public class ReportInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
             }
         }
 
-        ((TextView) infoView.findViewById(R.id.location)).setText(report.getLocation());
+        try {
+            ((TextView) infoView.findViewById(R.id.location)).setText(report.getLocation());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         ((TextView) infoView.findViewById(R.id.submittedBy)).setText(report.getUserId());
         ((TextView) infoView.findViewById(R.id.date)).setText(report.getDateTimeString());
         boolean isPurity = report.getClass().equals(PurityReport.class);

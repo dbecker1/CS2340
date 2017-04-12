@@ -17,9 +17,7 @@ public class HistoryInformationActivity extends AppCompatActivity {
     private EditText location;
     private EditText year;
     private RadioGroup contaminantType;
-    private RadioButton typeSelected;
     private RadioButton virus;
-    private RadioButton contaminant;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +27,7 @@ public class HistoryInformationActivity extends AppCompatActivity {
         year = (EditText) findViewById(R.id.year);
         contaminantType = (RadioGroup) findViewById(R.id.contaminantType);
         virus = (RadioButton) findViewById(R.id.virusButton);
-        contaminant = (RadioButton) findViewById(R.id.contaminantButton);
+        //RadioButton contaminant = (RadioButton) findViewById(R.id.contaminantButton);
     }
 
     /**
@@ -51,7 +49,7 @@ public class HistoryInformationActivity extends AppCompatActivity {
 
         // find whether virus or contaminant is selected
         String typeOfContaminant;
-        typeSelected = (RadioButton) findViewById(typeSelectedId);
+        RadioButton typeSelected = (RadioButton) findViewById(typeSelectedId);
         if(typeSelected == virus)  {
             typeOfContaminant = "virus";
         } else {

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
               android:orientation="vertical" android:layout_width="match_parent"
               android:layout_height="match_parent" android:weightSum="1"
               android:paddingLeft="15dp" android:paddingRight="15dp">
@@ -63,7 +62,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_above="@+id/view_below" android:weightSum="1"
+        android:weightSum="1"
         android:layout_marginTop="10sp">
 
         <RadioButton
@@ -80,7 +79,7 @@
             android:layout_weight="0.36" />
 
         <RadioButton
-            android:text="@string/manager"
+            android:text= "@string/manager"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/managerRadioButton"
@@ -97,7 +96,7 @@
         android:id="@+id/LinearLayout02"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
-        android:layout_alignParentBottom="true" android:weightSum="1"
+        android:weightSum="1"
         android:orientation="horizontal">
         <Button
                 android:text="@string/cancel"

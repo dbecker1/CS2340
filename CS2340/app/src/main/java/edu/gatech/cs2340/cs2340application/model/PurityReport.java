@@ -11,7 +11,7 @@ public class PurityReport extends Report {
     private String condition;
     private Double virusPPM;
     private Double contaminantPPM;
-    public static final int MAXPPM = 1000000;
+    private static final int MAXPPM = 1000000;
 
     /**
      * Return the condition attribute contained inside a water purity report

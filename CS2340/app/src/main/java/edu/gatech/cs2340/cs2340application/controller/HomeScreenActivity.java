@@ -2,10 +2,8 @@ package edu.gatech.cs2340.cs2340application.controller;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -19,9 +17,7 @@ import edu.gatech.cs2340.cs2340application.R;
 import edu.gatech.cs2340.cs2340application.model.User;
 
 public class HomeScreenActivity extends AppCompatActivity {
-    private ArrayAdapter<String> mAdapter;
-    private ActionBarDrawerToggle mDrawerToggle;
-    private String mActivityTitle;
+
     private Button submitPurity;
     private Button historicalReport;
 
@@ -32,8 +28,15 @@ public class HomeScreenActivity extends AppCompatActivity {
 
         submitPurity = (Button)findViewById(R.id.purity);
         historicalReport = (Button)findViewById(R.id.historical_report);
+        String uid = new String();
 
-        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        try {
+            uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference("users").child(uid);
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
