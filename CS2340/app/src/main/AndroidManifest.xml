@@ -67,6 +67,7 @@
             android:name=".controller.HistoricalReportsActivity"
             android:label="@string/title_activity_historical_reports"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".controller.ForgotPasswordActivity"></activity>
     </application>
 
 </manifest>

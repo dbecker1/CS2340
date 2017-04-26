@@ -96,11 +96,15 @@
         </Button>
     </LinearLayout>
 
-    <TextView
+    <Button
+        android:id="@+id/button4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView2"
-        android:layout_weight="0.23" />
+        android:layout_weight="0.08"
+        android:background="@color/ap_white"
+        android:onClick="onForgotPasswordClicked"
+        android:text="Forgot Password"
+        android:textColor="@android:color/holo_blue_dark" />
 
     <TextView
             android:text="@string/register_here"

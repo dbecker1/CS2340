@@ -100,4 +100,9 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(registration);
     }
 
+    public void onForgotPasswordClicked(View view) {
+        Intent forgot = new Intent(this, ForgotPasswordActivity.class);
+        startActivity(forgot);
+    }
+
 }
